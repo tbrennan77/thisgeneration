@@ -26,7 +26,7 @@
 
 # ignore Sage specific run files
 .cache-loader
-dist
+# dist EDIT: we want this now so we don't have to run additional commands on the server
 node_modules
 npm-debug.log
 yarn-error.log
