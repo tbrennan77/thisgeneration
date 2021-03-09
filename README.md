@@ -17,3 +17,7 @@ Follow these steps to run this project locally:
 ## Collaboration
 
 TODO: add details here on `Git` and collaborating...
+
+1. Push to GitHub
+2. Push to Staging [read this for the automatic git deploy setup](https://anchor.host/automatic-git-deploy-with-kinsta-via-ssh/)
+
