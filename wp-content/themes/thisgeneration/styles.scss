@@ -8,7 +8,12 @@ Version: 3.3.6
 */
 
 @import '_base';
-@import '_forms';
-@import '_tables';
-@import 'components/_widget1';
-// etc...
+@import '_font';
+@import '_elements';
+@import '_menus';
+@import '_wordpress';
+@import '_footer';
+@import '_editors';
+@import '_woocommerce';
+@import '_media';
+
