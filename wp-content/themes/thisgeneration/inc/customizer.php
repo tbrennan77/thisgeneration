@@ -21,8 +21,8 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'typography',
         array(
-            'title' => __( 'Preset Styles', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the typography', 'wp-bootstrap-starter' ),
+            'title' => __( 'Preset Styles', 'thisgeneration' ),
+            //'description' => __( 'This is a section for the typography', 'thisgeneration' ),
             'priority' => 20,
         )
     );
@@ -35,7 +35,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'theme_option_setting', array(
-        'label' => __( 'Theme Option', 'wp-bootstrap-starter' ),
+        'label' => __( 'Theme Option', 'thisgeneration' ),
         'section'    => 'typography',
         'settings'   => 'theme_option_setting',
         'type'    => 'select',
@@ -72,7 +72,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_style_setting', array(
-        'label' => __( 'Typography', 'wp-bootstrap-starter' ),
+        'label' => __( 'Typography', 'thisgeneration' ),
         'section'    => 'typography',
         'settings'   => 'preset_style_setting',
         'type'    => 'select',
@@ -94,7 +94,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'header_image',
         array(
-            'title' => __( 'Header Banner', 'wp-bootstrap-starter' ),
+            'title' => __( 'Header Banner', 'thisgeneration' ),
             'priority' => 30,
         )
     );
@@ -103,7 +103,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'header_img',
         array(
-            'label' => __( 'Header Image', 'wp-bootstrap-starter' ),
+            'label' => __( 'Header Image', 'thisgeneration' ),
             'section' => 'header_images',
             'type' => 'text',
         )
@@ -121,29 +121,29 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'header_bg_color',
             array(
-                'label'      => __( 'Header Banner Background Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Header Banner Background Color', 'thisgeneration' ),
                 'section'    => 'header_image',
                 'settings'   => 'header_bg_color_setting',
             ) )
     );
 
     $wp_customize->add_setting( 'header_banner_title_setting', array(
-        'default' => __( 'WP Bootstrap Framework', 'wp-bootstrap-starter' ),
+        'default' => __( 'WP Bootstrap Framework', 'thisgeneration' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_title_setting', array(
-        'label' => __( 'Banner Title', 'wp-bootstrap-starter' ),
+        'label' => __( 'Banner Title', 'thisgeneration' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_title_setting',
         'type' => 'text'
     ) ) );
 
     $wp_customize->add_setting( 'header_banner_tagline_setting', array(
-        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','wp-bootstrap-starter' ),
+        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','thisgeneration' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_tagline_setting', array(
-        'label' => __( 'Banner Tagline', 'wp-bootstrap-starter' ),
+        'label' => __( 'Banner Tagline', 'thisgeneration' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_tagline_setting',
         'type' => 'text'
@@ -154,7 +154,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_visibility', array(
         'settings' => 'header_banner_visibility',
-        'label'    => __('Remove Header Banner', 'wp-bootstrap-starter'),
+        'label'    => __('Remove Header Banner', 'thisgeneration'),
         'section'    => 'header_image',
         'type'     => 'checkbox',
     ) ) );
@@ -164,16 +164,16 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
    $wp_customize->add_section(
         'site_name_text_color',
         array(
-            'title' => __( 'Other Customizations', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Other Customizations', 'thisgeneration' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'thisgeneration' ),
             'priority' => 40,
         )
     );
     $wp_customize->add_section(
         'colors',
         array(
-            'title' => __( 'Background Color', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Background Color', 'thisgeneration' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'thisgeneration' ),
             'priority' => 50,
             'panel' => 'styling_option_panel',
         )
@@ -181,8 +181,8 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'background_image',
         array(
-            'title' => __( 'Background Image', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Background Image', 'thisgeneration' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'thisgeneration' ),
             'priority' => 60,
             'panel' => 'styling_option_panel',
         )
@@ -190,20 +190,20 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
 
     // Bootstrap and Fontawesome Option
     $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-bootstrap-starter' ),
+        'default' => __( 'no','thisgeneration' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( 
         'cdn_assets',
         array(
-            'label' => __( 'Use CDN for Assets', 'wp-bootstrap-starter' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bootstrap-starter' ),
+            'label' => __( 'Use CDN for Assets', 'thisgeneration' ),
+            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'thisgeneration' ),
             'section' => 'site_name_text_color',
             'settings' => 'cdn_assets_setting',
 	        'type'    => 'select',
 	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-bootstrap-starter' ),
-	            'no' => __( 'No', 'wp-bootstrap-starter' ),
+	            'yes' => __( 'Yes', 'thisgeneration' ),
+	            'no' => __( 'No', 'thisgeneration' ),
         	)
         )
     );
@@ -218,11 +218,11 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
 
     // Add control for logo uploader
     $wp_customize->add_setting( 'wp_bootstrap_starter_logo', array(
-        //'default' => __( '', 'wp-bootstrap-starter' ),
+        //'default' => __( '', 'thisgeneration' ),
         'sanitize_callback' => 'esc_url',
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_bootstrap_starter_logo', array(
-        'label'    => __( 'Upload Logo (replaces text)', 'wp-bootstrap-starter' ),
+        'label'    => __( 'Upload Logo (replaces text)', 'thisgeneration' ),
         'section'  => 'title_tagline',
         'settings' => 'wp_bootstrap_starter_logo',
     ) ) );
