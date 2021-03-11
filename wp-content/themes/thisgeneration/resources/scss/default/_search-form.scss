@@ -1,0 +1,67 @@
+/* ------------------------------------------------------------ *\
+	Search Form
+\* ------------------------------------------------------------ */
+
+.search-form {
+	position: relative;
+	overflow: hidden;
+	padding-right: 52px;
+
+	@include breakpoint-down(mobile-medium) {
+		padding-right: 40px;
+	}
+
+	.search__field {
+		display: block;
+		width: 100%;
+		height: 39px;
+		padding: 10px 0;
+		border: solid #e3e5e8;
+		border-width: 0 0 2px 0;
+		background: transparent;
+		transition: border $t-duration;
+	}
+
+	.search__field:focus {
+		border-color: $c-yellow;
+	}
+
+	.search__field::-webkit-input-placeholder,
+	.search__field::-moz-placeholder,
+	.search__field:-ms-input-placeholder,
+	.search__field::placeholder {
+		color: #777;
+	}
+
+	.search__btn {
+		position: absolute;
+		top: 50%;
+		right: 3px;
+		width: 32px;
+		height: 32px;
+		margin-top: -16px;
+		background-color: transparent;
+		border: none;
+		background-image: url(../images/ico/ico-search.svg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@include breakpoint-down(mobile-medium) {
+			width: 24px;
+			height: 24px;
+			margin-top: -12px;
+		}
+	}
+
+	.screen-reader-text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: 0;
+	}
+}

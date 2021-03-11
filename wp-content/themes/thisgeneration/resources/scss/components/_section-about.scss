@@ -1,0 +1,67 @@
+/* ------------------------------------------------------------ *\
+	Section About
+\* ------------------------------------------------------------ */
+
+.section-about {
+ 	margin: 122px 0 215px;
+
+ 	@include breakpoint-down(mobile) {
+		margin: 65px 0 100px;
+	}
+
+	@include breakpoint-down(mobile-medium) {
+		margin: 45px 0 65px;
+	}
+
+ 	.section__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -27px;
+
+		@include breakpoint-down(mobile) {
+			flex-direction: column-reverse;
+		}
+ 	}
+
+ 	.section__aside,
+ 	.section__content {
+ 		width: 50%;
+ 		padding: 27px;
+
+ 		@include breakpoint-down(mobile) {
+			width: 100%;
+		}
+ 	}
+
+ 	.section__entry {
+ 		margin-top: 10px;
+ 	}
+
+ 	.section__entry h1 {
+ 		margin-bottom: 25px;
+ 		line-height: 1.2;
+ 	}
+
+ 	.section__images {
+ 		display: flex;
+ 		flex-wrap: wrap;
+ 		margin: -10px -15px;
+
+ 		@include breakpoint-down(mobile-medium) {
+			margin: -5px;
+		}
+ 	}
+
+ 	.section__image {
+ 		width: 50%;
+ 		padding: 10px 15px;
+
+ 		@include breakpoint-down(mobile-medium) {
+			padding: 5px;
+		}
+ 	}
+
+ 	.section__image--lg {
+ 		width: 100%;
+ 	}
+}

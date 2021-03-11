@@ -1,0 +1,70 @@
+/* ------------------------------------------------------------ *\
+	Writer
+\* ------------------------------------------------------------ */
+
+.writer {
+	display: flex;
+	align-items: flex-start;
+	max-width: 897px;
+	padding: 35px 50px 40px 35px;
+	margin: 0 auto;
+	background-color: #ebeced;
+	border-radius: 25px;
+
+	@include breakpoint-down(mobile-medium) {
+		padding: 25px 20px 30px;
+	}
+
+	@media(max-width: 500px){
+		display: block;
+	}
+
+	.writer__aside {
+		width: 139px;
+		flex-shrink: 0;
+		text-align: center;
+
+		@media(max-width: 500px){
+			margin: 0 auto 20px;
+		}
+	}
+
+	.writer__aside p {
+		font-size: 12px;
+		line-height: 2.17;
+	}
+
+	.writer__content {
+		flex: 1 1;
+		padding-left: 33px;
+
+		@include breakpoint-down(mobile-medium) {
+			padding-left: 20px;
+		}
+
+		@media(max-width: 500px){
+			padding-left: 0;
+		}
+	}
+
+	.writer__entry {
+		font-size: 14px;
+		line-height: 1.86;
+	}
+
+	.writer__image {
+		padding: 5px;
+		margin-bottom: 10px;
+		border: 3px solid #2584c9;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	.writer__image img {
+		margin: 0;
+	}
+
+	.writer__image-inner {
+		padding-bottom: 100%;
+		border-radius: 50%;
+	}
+}

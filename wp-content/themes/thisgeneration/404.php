@@ -1,37 +1,19 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package WP_Bootstrap_Starter
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<section class="section-default section-default--404">
+	<div class="shell section__shell">
+		<div class="section__inner">
+			<div class="section__content">
+				<?php
+				crb_the_title( '<h2 class="section__title">', '</h2>' );
 
-	<section id="primary" class="content-area col-sm-12 col-lg-8">
-		<div id="main" class="site-main" role="main">
+				printf( __( '<p>Please check the URL for proper spelling and capitalization.<br />If you\'re having trouble locating a destination, try visiting the:<br><a class="btn section__btn" href="%1$s">home page</a></p>', 'crb' ), home_url( '/' ) );
+				?>
+			</div><!-- /.section__content -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-default -->
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'thisgeneration' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'thisgeneration' ); ?></p>
-
-					<?php
-						get_search_form();
-
-
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</div><!-- #main -->
-	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

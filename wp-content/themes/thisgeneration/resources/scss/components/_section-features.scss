@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------ *\
+	Section Features
+\* ------------------------------------------------------------ */
+
+.section-features {
+	.section__head {
+		position: relative;
+		padding: 30px 0 48px;
+		background-color: $c-blue;
+		text-align: center;
+
+		@include breakpoint-down(mobile) {
+			padding-bottom: 30px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: calc(100% - 1px);
+			margin-left: -43px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 30px 43px 0 43px;
+			border-color: #57a3d9 transparent transparent transparent;
+		}
+	}
+
+	.section__head h1 {
+		line-height: 1.2;
+	}
+
+	.section__head span {
+		color: $c-white;
+		display: block;
+	}
+
+	.section__body {
+		background: #44494d;
+		padding: 70px 0 105px;
+		color: $c-white;
+
+		@include breakpoint-down(mobile) {
+			padding: 45px 0 65px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			padding-bottom: 55px;
+		}
+	}
+}

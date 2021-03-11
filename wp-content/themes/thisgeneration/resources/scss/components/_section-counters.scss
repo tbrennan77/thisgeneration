@@ -1,0 +1,26 @@
+/* ------------------------------------------------------------ *\
+	Section Counters
+\* ------------------------------------------------------------ */
+
+.section-counters {
+	margin-top: 30px;
+
+	.section__head {
+		margin-bottom: 14px;
+		text-align: center;
+		color: $c-blue;
+	}
+
+	.section__head h2 {
+		font-size: 40px;
+	}
+
+	.section__body {
+		padding: 110px 0 92px;
+		background: $c-dark-gray;
+
+		@include breakpoint-down(mobile) {
+			padding: 55px 0 65px;
+		}
+	}
+}

@@ -1,0 +1,114 @@
+/* ------------------------------------------------------------ *\
+	Questions
+\* ------------------------------------------------------------ */
+
+
+.questions {
+	> ul {
+		list-style: none;
+	}
+
+	> ul > li + li {
+		margin-top: 5px;
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Question
+\* ------------------------------------------------------------ */
+
+.question {
+	.question__head {
+		position: relative;
+		padding: 21px 166px 21px 116px;
+		border-radius: 10px;
+		background-color: $c-gray;
+		overflow: hidden;
+
+		@include breakpoint-down(mobile) {
+			padding-left: 85px;
+			padding-right: 25px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			padding-left: 70px;
+		}
+
+		&:before {
+			content: 'Q:';
+			position: absolute;
+			left: 45px;
+			top: 7px;
+			font-size: 45px;
+			font-weight: 900;
+			font-family: $ff-sans-serif-2;
+			line-height: 39px;
+			pointer-events: none;
+
+			@include breakpoint-down(mobile) {
+				left: 15px;
+			}
+
+			@include breakpoint-down(mobile-medium) {
+				font-size: 30px;
+			}
+		}
+	}
+
+	.question__head h6 {
+		font-family: $ff-sans-serif;
+		font-weight: 700;
+	}
+
+	.question__body {
+		position: relative;
+		padding: 27px 155px 27px 116px;
+		border-radius: 10px;
+
+		@include breakpoint-down(mobile) {
+			padding-left: 85px;
+			padding-right: 25px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			padding-left: 70px;
+		}
+
+		&:before {
+			content: 'A:';
+			position: absolute;
+			left: 32px;
+			top: 20px;
+			display: block;
+			width: 65px;
+			padding-left: 4px;
+			padding-bottom: 2px;
+			font-size: 45px;
+			font-weight: 900;
+			color: $c-white;
+			font-family: $ff-sans-serif-2;
+			text-transform: uppercase;
+			line-height: 62px;
+			background-color: $c-blue;
+			border-radius: 50%;
+			text-align: center;
+			pointer-events: none;
+
+			@include breakpoint-down(mobile) {
+				left: 2px;
+			}
+
+			@include breakpoint-down(mobile-medium) {
+				font-size: 30px;
+				width: 50px;
+				line-height: 46px;
+				padding-left: 2px;
+				padding-bottom: 4px;
+			}
+		}
+	}
+
+	.question__entry {
+		min-height: 60px;
+	}
+}

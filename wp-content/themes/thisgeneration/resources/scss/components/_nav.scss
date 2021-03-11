@@ -1,0 +1,235 @@
+/* ------------------------------------------------------------ *\
+	Nav
+\* ------------------------------------------------------------ */
+
+.nav {
+	margin-top: 20px;
+	font-size: 20px;
+	line-height: auto;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1;
+
+	@include breakpoint-down(mobile) {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		padding: 10px 20px 30px;
+		background: $c-white;
+		border-bottom: 10px solid $c-yellow;
+		margin-top: 0;
+		font-size: 18px;
+		display: none;
+	}
+
+	@include breakpoint-up(mobile) {
+		display: block !important;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	> ul > li {
+		position: relative;
+		z-index: 10;
+		display: inline-block;
+		padding: 0 4px;
+
+		@include breakpoint-down(mobile) {
+			display: block;
+		}
+	}
+	> ul > li a {
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		transition: background $t-duration, color $t-duration;
+
+		&:after {
+			display: block;
+		    content: attr(data-text);
+		    font-weight: 700;
+		    height: 0;
+		    overflow: hidden;
+		    visibility: hidden;
+		}
+	}
+
+	> ul > li > a {
+		position: relative;
+		padding: 0 3px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 0;
+			background: $c-blue;
+			transition: height $t-duration;
+		}
+	}
+
+	> ul > li.nav__btn a {
+		display: inline-block;
+		text-decoration: none;
+		padding: 13px 21px;
+		border: 5px solid $c-yellow;
+		border-radius: 30px;
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+			max-width: 220px;
+		}
+
+		&:before {
+			content: none;
+		}
+
+		&:hover a {
+			background: $c-yellow;
+			color: $c-white;
+		}
+	}
+
+	> ul > li + li {
+		margin-left: 35px;
+
+		@include breakpoint-down(mobile) {
+			margin-left: 0;
+			margin-top: 25px;
+		}
+	}
+
+	> ul > li > ul {
+	    position: absolute;
+	    top: 100%;
+	    left: 50%;
+	    z-index: 5;
+	    width: 200px;
+	    margin-left: -100px;
+	    margin-top: 15px;
+	    border-radius: 12px;
+	    text-align: center;
+	    font-size: 18px;
+	    opacity: 0;
+	    visibility: hidden;
+	    background: $c-white;
+	    transform: translateY(10px);
+	    transition: transform $t-duration, box-shadow $t-duration;
+
+	    @include breakpoint-up(mobile) {
+			display: block !important;
+		}
+
+	    @include breakpoint-down(mobile) {
+			position: static;
+			display: none;
+			opacity: 1;
+			visibility: visible;
+			width: 100%;
+			margin: 0;
+			transform: translateY(0);
+			font-size: 16px;
+		}
+
+	    &:before {
+	    	content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			width: 100%;
+			height: 15px;
+
+			@include breakpoint-down(mobile) {
+				content: none;
+			}
+		}
+	}
+
+	> ul > li > ul > li {
+		transition: all $t-duration;
+
+		&:hover a {
+			background: $c-yellow;
+		}
+
+		&:first-child:before {
+			content: '';
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 0 6px 12px 6px;
+		    border-color: transparent transparent #fff transparent;
+		    position: absolute;
+		    top: -10px;
+		    left: 50%;
+		    transform: translateX(-6px);
+		    transition: border-color 0.4s;
+
+		    @include breakpoint-down(mobile) {
+				content: none;
+			}
+		}
+
+		&:hover:before {
+			border-color: transparent transparent $c-yellow transparent
+		}
+	}
+
+	> ul > li > ul > li a {
+		display: block;
+		padding: 10px 5px;
+	}
+
+	> ul > li > ul > li:first-child a {
+		border-radius: 12px 12px 0 0;
+
+		@include breakpoint-down(mobile) {
+			border-radius: 0;
+		}
+	}
+
+	> ul > li > ul > li:last-child a {
+		border-radius: 0 0 12px 12px;
+
+		@include breakpoint-down(mobile) {
+			border-radius: 0;
+		}
+	}
+}
+
+.nav > ul > li.current-menu-item > a {
+	font-weight: 700;
+
+	&:before {
+		height: 16px;
+	}
+}
+
+body .nav ul li:hover > a {
+	color: $c-base;
+	font-weight: 700;
+}
+
+body .nav > ul > li.nav__btn:hover a {
+	font-weight: 400;
+	background: $c-yellow;
+	color: $c-white;
+}
+
+body .nav ul li:hover > ul {
+	opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    box-shadow: 0px 9px 15px 1.12px rgba(33, 30, 30, 0.2);
+
+    @include breakpoint-down(mobile) {
+		transform: translateY(0);
+		box-shadow: none;
+	}
+}

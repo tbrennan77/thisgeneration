@@ -1,0 +1,129 @@
+/* ------------------------------------------------------------ *\
+	Socials
+\* ------------------------------------------------------------ */
+
+.socials {
+	font-size: 32px;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: -2px;
+		list-style: none;
+	}
+
+	ul li {
+		padding: 2px;
+	}
+
+	ul li a {
+		position: relative;
+		display: block;
+		width: 61px;
+		height: 61px;
+		border: 5px solid $c-white;
+		border-radius: 50%;
+		color: $c-white;
+		transition: border $t-duration, color $t-duration;
+	}
+
+	ul li a:hover {
+		border-color: $c-dark-gray;
+	}
+
+	ul li i {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	ul li i.fa-linkedin-in {
+		font-size: 25px;
+	}
+}
+
+/*socials--blue*/
+
+.socials--blue {
+	ul li a {
+		border-color: $c-dark-blue;
+		color: $c-dark-blue;
+	}
+
+	ul li a:hover {
+		border-color: $c-dark-gray;
+		color: $c-dark-gray;
+	}
+}
+
+/*socials--gray-borders*/
+.socials--gray-borders {
+	ul li a {
+		border-color: $c-dark-gray;
+		color: $c-white;
+	}
+
+	ul li a:hover {
+		border-color: $c-white;
+	}
+}
+
+/*socials--gray*/
+.socials--dark-gray {
+	ul li a {
+		border-color: $c-dark-gray;
+		color: $c-dark-gray;
+
+		&:hover {
+			color: $c-dark-blue;
+		}
+	}
+}
+
+/*socials--medium*/
+.socials--medium {
+	font-size: 24px;
+
+	ul {
+		margin: -6px;
+	}
+
+	ul li {
+		padding: 6px;
+	}
+
+	ul li a {
+		width: 46px;
+		height: 46px;
+		border-width: 4px;
+	}
+
+	ul li i.fa-linkedin-in {
+		font-size: inherit;
+	}
+}
+
+/*socials--small*/
+.socials--small {
+	font-size: 20px;
+
+	ul li a {
+		width: 38px;
+		height: 38px;
+		border-width: 3px;
+	}
+
+	ul li i.fa-linkedin-in {
+		font-size: inherit;
+	}
+}
+
+/*socials--alt*/
+.socials--alt {
+	ul li a:hover {
+		border-color: $c-blue;
+		color: $c-blue;
+	}
+}

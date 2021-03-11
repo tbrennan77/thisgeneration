@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------ *\
+	Section Questions
+\* ------------------------------------------------------------ */
+
+.section-questions {
+	margin: 98px 0 73px;
+
+	@include breakpoint-down(mobile-medium) {
+		margin: 45px 0 50px;
+	}
+
+ 	.section__head {
+ 		margin-bottom: 67px;
+ 		text-align: center;
+
+ 		@include breakpoint-down(mobile-medium) {
+			margin-bottom: 35px;
+		}
+ 	}
+}

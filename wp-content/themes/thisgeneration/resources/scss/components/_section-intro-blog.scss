@@ -1,0 +1,85 @@
+/* ------------------------------------------------------------ *\
+	Section Intro Blog
+\* ------------------------------------------------------------ */
+
+.section-intro-blog {
+	padding: 27px 0 16px;
+	background-color: $c-dark-gray;
+	color: $c-white;
+
+	h1 {
+		padding-bottom: 34px;
+		text-transform: uppercase;
+		font-size: 50px;
+		font-weight: 900;
+		line-height: 1.2;
+
+		@include breakpoint-down(mobile) {
+			padding-bottom: 0;
+			font-size: 38px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 32px;
+		}
+	}
+
+	.section__cols {
+		max-width: 1353px;
+		margin-left: auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		@include breakpoint-down(mobile-medium) {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	.section__col-size1 {
+		width: 37%;
+
+		@include breakpoint-down(mobile) {
+			flex: 1 1;
+			width: auto;
+			margin-bottom: 20px;
+		}
+	}
+
+	.section__col-size2 {
+		width: 374px;
+		padding: 0 15px;
+
+		@include breakpoint-down(mobile) {
+			width: 260px;
+			margin-bottom: 20px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.section__col-size3 {
+		flex: 1 1;
+
+		@include breakpoint-down(mobile) {
+			flex-basis: 100%;
+			width: 100%;
+		}
+	}
+
+	.section__image {
+		margin: 0 auto;
+	}
+
+	.socials ul {
+	 	justify-content: flex-end;
+
+	 	@include breakpoint-down(mobile-medium) {
+			justify-content: center;
+		}
+	}
+}

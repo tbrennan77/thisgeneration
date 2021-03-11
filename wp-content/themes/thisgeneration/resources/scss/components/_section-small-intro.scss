@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------ *\
+	Section Small Intro
+\* ------------------------------------------------------------ */
+
+.section-small-intro {
+	padding: 103px 0 95px;
+	background-color: $c-dark-blue;
+	color: $c-white;
+	text-transform: uppercase;
+	text-align: center;
+
+	@include breakpoint-down(mobile) {
+		padding: 55px 0;
+	}
+
+	h1 {
+		padding: 0 230px;
+		font-size: 50px;
+		margin-bottom: 0;
+
+		@include breakpoint-down(mobile) {
+			padding: 0;
+			margin-bottom: 30px;
+			font-size: 40px;
+		}
+	}
+
+	.shell {
+		position: relative;
+	}
+
+	.socials {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+
+		@include breakpoint-down(mobile) {
+			position: static;
+			transform: translateY(0);
+		}
+	}
+}

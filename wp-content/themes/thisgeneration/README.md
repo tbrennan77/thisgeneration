@@ -1,23 +1,43 @@
-# This Generation Wordpress Theme
+## Header
 
-This is a custom WordPress theme for Christian Media International (CMI). The goal of CMI is to reach the world with the gospel in this generation. The theme name is taken from that mission statement.
+The header shows a standard WordPress menu location and a button.
 
-The theme is built on the [Sage template](https://roots.io/sage) from Roots.io. The development is being led by [Tim Brennan](https://github.com/tbrennan77) with design by Brandon McCurdy. The technical documentation that is specific to Sage is located in the `wp-content/themes/thisgeneration` directory. Please reference that for specific functionality questions, install, setup and running this project locally.
+The menu is managed from [WordPress menus](nav-menus.php)
 
-## Getting Started 
+The button is managed from [Theme options](admin.php?page=crbn-theme-options.php)
 
-Follow these steps to run this project locally:
+## Footer
 
-1. Download a fresh copy of [WordPress](https://wordpress.org/download/) to your local machine in your project or websites directory. 
-2. `cd` into the root folder of `your/project/directory/` and `git clone git@github.com:tbrennan77/thisgeneration.git`
-3. Run a database update from the `/Migrations` directory to get the latest version of the database (TODO: add more specific details here...).
-4. Edit the `wp-config.php` file to point to your specific database (ie `localhost` with your `username` and `password`).
-5. Refer to the technical documentation in the `wp-content/themes/thisgeneration` directory for instructions on running the project locally
+The footer shows three menu locations, socials, copyright text and optionally another logo on top.
 
-## Collaboration
+It also shows a background image.
 
-TODO: add details here on `Git` and collaborating...
+The menu locations are managed from [WordPress menus](nav-menus.php)
 
-1. Push to GitHub
-2. Push to Staging [read this for the automatic git deploy setup](https://anchor.host/automatic-git-deploy-with-kinsta-via-ssh/)
+The social icon links, copyright text and background image are managed from [Theme options](admin.php?page=crbn-theme-options.php)
 
+## Theme Options
+
+Manage header, footer, socials, the callout shown at the bottom of blog pages and optionally add scripts to header and footer
+
+## Post
+
+To edit the blue text in the top part of the single post page and the excerpt in the blog listing, edit the text in the excerpt section to the right in the post edit page
+
+## Page Templates
+
+### Section Builder
+
+Use many different sections to build a page.
+
+Has a checkbox to show or hide the additional footer logo.
+
+## Shortcodes
+
+### [year]
+
+The [year] shortcode shows the current year
+
+Example usage:
+
+	The current year is [year] .

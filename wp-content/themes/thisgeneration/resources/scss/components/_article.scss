@@ -1,0 +1,237 @@
+/* ------------------------------------------------------------ *\
+	Article
+\* ------------------------------------------------------------ */
+
+.article {
+	display: flex;
+	align-items: center;
+
+	@include breakpoint-down(mobile) {
+		display: block;
+	}
+
+	.article__head {
+		margin-bottom: 10px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	.article__image {
+		position: relative;
+		z-index: 10;
+		width: 421px;
+		height: 421px;
+		border-radius: 50%;
+		flex-shrink: 0;
+
+		@include breakpoint-down(mobile-medium) {
+			width: 280px;
+			height: 280px;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			width: 230px;
+			height: 230px;
+		}
+	}
+
+	.article__content {
+		position: relative;
+		flex: 1 1;
+		padding: 20px 73px 65px;
+		border-radius: 25px;
+		border: solid $c-gray;
+		border-width: 5px;
+
+		@include breakpoint-down(mobile) {
+			margin-left: 0;
+			padding: 35px 25px;
+		}
+	}
+
+	.article__image + .article__content {
+		margin-left: -210px;
+		padding-left: 245px;
+
+		@include breakpoint-down(mobile) {
+			margin-left: 0;
+			padding-left: 25px;
+			margin-top: -110px;
+			padding-top: 125px;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			margin-top: -90px;
+			padding-top: 105px;
+		}
+	}
+
+	.article__meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 23px;
+		padding-left: 9px;
+		font-size: 16px;
+		font-weight: 300;
+		color: $c-dark-gray;
+
+		@include breakpoint-down(mobile) {
+			font-size: 14px;
+		}
+	}
+
+	.article__meta ul {
+		list-style: none;
+		margin-bottom: 0;
+	}
+
+	.article__meta ul li {
+		display: inline-block;
+
+		@include breakpoint-down(mobile-medium) {
+			display: block;
+		}
+	}
+
+	.article__meta ul li + li {
+		&:before {
+			content: '|';
+			margin: 0 21px;
+
+			@include breakpoint-down(mobile) {
+				margin: 0 12px;
+			}
+
+			@include breakpoint-down(mobile-medium) {
+				content: none;
+			}
+		}
+	}
+
+	.article__meta ul li a {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			color: $c-yellow;
+		}
+	}
+
+	.article__video {
+		position: relative;
+		flex-shrink: 0;
+		padding-left: 63px;
+
+		@include breakpoint-down(mobile) {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			white-space: nowrap;
+			text-indent: 100%;
+			text-shadow: none;
+			overflow: hidden;
+			width: 0;
+			height: 21px;
+			padding-left: 40px;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			right: 8px;
+			width: 32px;
+			height: 17px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			z-index: -1;
+			width: 40px;
+			height: 21px;
+			margin-top: -10px;
+			background: url(../images/ico/ico-camera.png) no-repeat center/cover;
+			background-size: cover;
+
+			@include breakpoint-down(mobile) {
+				left: 0;
+				top: 0;
+				margin-top: 0;
+			}
+
+			@include breakpoint-down(mobile-small) {
+				width: 32px;
+				height: 17px;
+			}
+		}
+	}
+
+	.article__title {
+		position: relative;
+		padding-bottom: 18px;
+		margin-bottom: 32px;
+		font-size: 35px;
+		line-height: 1.2;
+
+		@include breakpoint-down(mobile) {
+			font-size: 28px;
+			margin-bottom: 24px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 24px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: $c-dark-blue;
+			width: 100%;
+			max-width: 424px;
+			height: 5px;
+			transition: background $t-duration;
+		}
+
+		&:hover {
+			color: $c-yellow;
+		}
+
+		&:hover:after {
+			background-color: $c-yellow;
+		}
+	}
+
+	.article__title a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.article__entry {
+		padding-left: 47px;
+
+		@include breakpoint-down(mobile) {
+			padding-left: 30px;
+			font-size: 16px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			padding-left: 0;
+		}
+	}
+
+	.article__entry a {
+		color: $c-blue;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover {
+			color: $c-yellow;
+		}
+	}
+}

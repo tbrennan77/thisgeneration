@@ -1,0 +1,34 @@
+/* ------------------------------------------------------------ *\
+	List Prices
+\* ------------------------------------------------------------ */
+
+.list-prices {
+	font-size: 25px;
+	line-height: 1.2;
+	text-align: center;
+
+	> ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		margin: -25px -10px;
+	}
+
+	> ul > li {
+		width: 33.3334%;
+		padding: 25px 10px;
+
+		@include breakpoint-down(mobile) {
+			width: 50%;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			width: 100%;
+		}
+	}
+
+	> ul > li h1 {
+		margin-bottom: 15px;
+		color: $c-blue;
+	}
+}

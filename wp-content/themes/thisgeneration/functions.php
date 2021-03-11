@@ -1,302 +1,279 @@
 <?php
-/**
- * WP Bootstrap Starter functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WP_Bootstrap_Starter
- */
+define( 'CRB_THEME_DIR', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
 
-if ( ! function_exists( 'wp_bootstrap_starter_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function wp_bootstrap_starter_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on WP Bootstrap Starter, use a find and replace
-	 * to change 'thisgeneration' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'thisgeneration', get_template_directory() . '/languages' );
+add_action( 'admin_init', 'crb_remove_editor' );
+function crb_remove_editor() {
+	$id = '';
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	if ( isset( $_GET['post'] ) ) {
+		$id = intval( esc_attr( $_GET['post'] ) );
+	}
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+	$excluded = [
+		'templates/section-builder.php'
+	];
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'thisgeneration' ),
-	) );
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'caption',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'wp_bootstrap_starter_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
-    function wp_boostrap_starter_add_editor_styles() {
-        add_editor_style( 'custom-editor-style.css' );
-    }
-    add_action( 'admin_init', 'wp_boostrap_starter_add_editor_styles' );
-
+	if ( $id && in_array( get_page_template_slug( $id ), $excluded ) ) {
+		remove_post_type_support( 'page', 'editor' );
+	}
 }
-endif;
-add_action( 'after_setup_theme', 'wp_bootstrap_starter_setup' );
 
+# Enqueue JS and CSS assets on the front-end
+add_action( 'wp_enqueue_scripts', 'crb_enqueue_assets' );
+function crb_enqueue_assets() {
+	$template_dir = get_template_directory_uri();
 
-/**
- * Add Welcome message to dashboard
- */
-function wp_bootstrap_starter_reminder(){
-        $theme_page_url = 'https://afterimagedesigns.com/thisgeneration/?dashboard=1';
+	# Enqueue Custom JS files
+	wp_enqueue_script(
+		'theme-js-bundle',
+		$template_dir . crb_assets_bundle( 'js/bundle.js' ),
+		array( 'jquery' ), // deps
+		null, // version -- this is handled by the bundle manifest
+		true // in footer
+);
 
-            if(!get_option( 'triggered_welcomet')){
-                $message = sprintf(__( 'Welcome to WP Bootstrap Starter Theme! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'thisgeneration' ),
-                    esc_url( $theme_page_url )
-                );
+	# Enqueue Custom CSS files
+	wp_enqueue_style(
+		'theme-css-bundle',
+		$template_dir . crb_assets_bundle( 'css/bundle.css' )
+	);
 
-                printf(
-                    '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
-                        <p>%1$s</p>
-                    </div>',
-                    $message
-                );
-                add_option( 'triggered_welcomet', '1', '', 'yes' );
-            }
+	# The theme style.css file may contain overrides for the bundled styles
+	crb_enqueue_style( 'theme-styles', $template_dir . '/style.css' );
 
-}
-add_action( 'admin_notices', 'wp_bootstrap_starter_reminder' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function wp_bootstrap_starter_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'wp_bootstrap_starter_content_width', 1170 );
-}
-add_action( 'after_setup_theme', 'wp_bootstrap_starter_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function wp_bootstrap_starter_widgets_init() {
-    register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'thisgeneration' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'thisgeneration' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 1', 'thisgeneration' ),
-        'id'            => 'footer-1',
-        'description'   => esc_html__( 'Add widgets here.', 'thisgeneration' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 2', 'thisgeneration' ),
-        'id'            => 'footer-2',
-        'description'   => esc_html__( 'Add widgets here.', 'thisgeneration' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 3', 'thisgeneration' ),
-        'id'            => 'footer-3',
-        'description'   => esc_html__( 'Add widgets here.', 'thisgeneration' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-}
-add_action( 'widgets_init', 'wp_bootstrap_starter_widgets_init' );
-
-
-/**
- * Enqueue scripts and styles.
- */
-function wp_bootstrap_starter_scripts() {
-	// load bootstrap css
-    if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
-        wp_enqueue_style( 'thisgeneration-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
-        wp_enqueue_style( 'thisgeneration-fontawesome-cdn', 'https://use.fontawesome.com/releases/v5.15.1/css/all.css' );
-    } else {
-        wp_enqueue_style( 'thisgeneration-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
-        wp_enqueue_style( 'thisgeneration-fontawesome-cdn', get_template_directory_uri() . '/inc/assets/css/fontawesome.min.css' );
-    }
-	// load bootstrap css
-	// load AItheme styles
-	// load WP Bootstrap Starter styles
-	wp_enqueue_style( 'thisgeneration-style', get_stylesheet_uri() );
-    if(get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default') {
-        wp_enqueue_style( 'thisgeneration-'.get_theme_mod( 'theme_option_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/theme-option/'.get_theme_mod( 'theme_option_setting' ).'.css', false, '' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'poppins-lora') {
-        wp_enqueue_style( 'thisgeneration-poppins-lora-font', 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'montserrat-merriweather') {
-        wp_enqueue_style( 'thisgeneration-montserrat-merriweather-font', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900|Montserrat:300,400,400i,500,700,800' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'poppins-poppins') {
-        wp_enqueue_style( 'thisgeneration-poppins-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'roboto-roboto') {
-        wp_enqueue_style( 'thisgeneration-roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'arbutusslab-opensans') {
-        wp_enqueue_style( 'thisgeneration-arbutusslab-opensans-font', 'https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,300i,400,400i,600,600i,700,800' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'oswald-muli') {
-        wp_enqueue_style( 'thisgeneration-oswald-muli-font', 'https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800|Oswald:300,400,500,600,700' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'montserrat-opensans') {
-        wp_enqueue_style( 'thisgeneration-montserrat-opensans-font', 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300,300i,400,400i,600,600i,700,800' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) === 'robotoslab-roboto') {
-        wp_enqueue_style( 'thisgeneration-robotoslab-roboto', 'https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:300,300i,400,400i,500,700,700i' );
-    }
-    if(get_theme_mod( 'preset_style_setting' ) && get_theme_mod( 'preset_style_setting' ) !== 'default') {
-        wp_enqueue_style( 'thisgeneration-'.get_theme_mod( 'preset_style_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/typography/'.get_theme_mod( 'preset_style_setting' ).'.css', false, '' );
-    }
-    //Color Scheme
-    /*if(get_theme_mod( 'preset_color_scheme_setting' ) && get_theme_mod( 'preset_color_scheme_setting' ) !== 'default') {
-        wp_enqueue_style( 'thisgeneration-'.get_theme_mod( 'preset_color_scheme_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/color-scheme/'.get_theme_mod( 'preset_color_scheme_setting' ).'.css', false, '' );
-    }else {
-        wp_enqueue_style( 'thisgeneration-default', get_template_directory_uri() . '/inc/assets/css/presets/color-scheme/blue.css', false, '' );
-    }*/
-
-	wp_enqueue_script('jquery');
-
-    // Internet Explorer HTML5 support
-    wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
-    wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
-
-	// load bootstrap js
-    if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
-        wp_enqueue_script('thisgeneration-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1/dist/umd/popper.min.js', array(), '', true );
-    	wp_enqueue_script('thisgeneration-bootstrapjs', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js', array(), '', true );
-    } else {
-        wp_enqueue_script('thisgeneration-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '', true );
-        wp_enqueue_script('thisgeneration-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', true );
-    }
-    wp_enqueue_script('thisgeneration-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
-	wp_enqueue_script( 'thisgeneration-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	# Enqueue Comments JS file
+	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'wp_bootstrap_starter_scripts' );
 
+# Enqueue JS and CSS assets on admin pages
+add_action( 'admin_enqueue_scripts', 'crb_admin_enqueue_scripts' );
+function crb_admin_enqueue_scripts() {
+	$template_dir = get_template_directory_uri();
 
+	# Enqueue Scripts
+	# @crb_enqueue_script attributes -- id, location, dependencies, in_footer = false
+	# crb_enqueue_script( 'theme-admin-functions', $template_dir . '/js/admin-functions.js', array( 'jquery' ) );
 
-/**
- * Add Preload for CDN scripts and stylesheet
- */
-function wp_bootstrap_starter_preload( $hints, $relation_type ){
-    if ( 'preconnect' === $relation_type && get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
-        $hints[] = [
-            'href'        => 'https://cdn.jsdelivr.net/',
-            'crossorigin' => 'anonymous',
-        ];
-        $hints[] = [
-            'href'        => 'https://use.fontawesome.com/',
-            'crossorigin' => 'anonymous',
-        ];
-    }
-    return $hints;
-} 
+	# Enqueue Styles
+	# @crb_enqueue_style attributes -- id, location, dependencies, media = all
+	# crb_enqueue_style( 'theme-admin-styles', $template_dir . '/css/admin-style.css' );
 
-add_filter( 'wp_resource_hints', 'wp_bootstrap_starter_preload', 10, 2 );
-
-
-
-function wp_bootstrap_starter_password_form() {
-    global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<form action="' . esc_url( home_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-    <div class="d-block mb-3">' . __( "To view this protected post, enter the password below:", "thisgeneration" ) . '</div>
-    <div class="form-group form-inline"><label for="' . $label . '" class="mr-2">' . __( "Password:", "thisgeneration" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" class="form-control mr-2" /> <input type="submit" name="Submit" value="' . esc_attr__( "Submit", "thisgeneration" ) . '" class="btn btn-primary"/></div>
-    </form>';
-    return $o;
+	# Editor Styles
+	# add_editor_style( 'css/custom-editor-style.css' );
 }
-add_filter( 'the_password_form', 'wp_bootstrap_starter_password_form' );
 
+add_action( 'login_enqueue_scripts', 'crb_login_enqueue' );
+function crb_login_enqueue() {
+	crb_enqueue_style( 'theme-login-styles', get_template_directory_uri() . '/css/login-style.css' );
+}
 
+# Attach Custom Post Types and Custom Taxonomies
+add_action( 'init', 'crb_attach_post_types_and_taxonomies', 0 );
+function crb_attach_post_types_and_taxonomies() {
+  # Attach Custom Post Types
+	include_once( CRB_THEME_DIR . 'options/post-types.php' );
+
+  # Attach Custom Taxonomies
+	include_once( CRB_THEME_DIR . 'options/taxonomies.php' );
+}
+
+add_action( 'after_setup_theme', 'crb_setup_theme' );
+
+# To override theme setup process in a child theme, add your own crb_setup_theme() to your child theme's
+# functions.php file.
+if ( ! function_exists( 'crb_setup_theme' ) ) {
+	function crb_setup_theme() {
+		# Make this theme available for translation.
+		load_theme_textdomain( 'crb', get_template_directory() . '/languages' );
+
+		# Autoload dependencies
+		$autoload_dir = CRB_THEME_DIR . 'vendor/autoload.php';
+		if ( ! is_readable( $autoload_dir ) ) {
+			wp_die( __( 'Please, run <code>composer install</code> to download and install the theme dependencies.', 'crb' ) );
+		}
+		include_once( $autoload_dir );
+		\Carbon_Fields\Carbon_Fields::boot();
+
+		# Additional libraries and includes
+		include_once( CRB_THEME_DIR . 'includes/admin-login.php' );
+		include_once( CRB_THEME_DIR . 'includes/blocks.php' );
+		include_once( CRB_THEME_DIR . 'includes/boot-blocks.php' );
+		include_once( CRB_THEME_DIR . 'includes/comments.php' );
+		include_once( CRB_THEME_DIR . 'includes/title.php' );
+		include_once( CRB_THEME_DIR . 'includes/gravity-forms.php' );
+		include_once( CRB_THEME_DIR . 'includes/helpers/utils-socials.php' );
+
+		# Theme supports
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'menus' );
+		add_theme_support( 'html5', array( 'gallery' ) );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
+
+		# Manually select Post Formats to be supported - http://codex.wordpress.org/Post_Formats
+		// add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
+		# Register Theme Menu Locations
+		register_nav_menus( array(
+			'header-location' => __( 'Header location', 'crb' ),
+			'footer-left-location' => __( 'Footer left location', 'crb' ),
+			'footer-right-location' => __( 'Footer right location', 'crb' ),
+			'footer-bottom-location' => __( 'Footer bottom location', 'crb' )
+		) );
+
+		# Attach custom widgets
+		include_once( CRB_THEME_DIR . 'options/widgets.php' );
+
+		# Attach custom shortcodes
+		include_once( CRB_THEME_DIR . 'options/shortcodes.php' );
+
+		# Add Actions
+		add_action( 'widgets_init', 'crb_widgets_init' );
+		add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
+
+		# Add Filters
+		add_filter( 'excerpt_more', 'crb_excerpt_more' );
+		add_filter( 'excerpt_length', 'crb_excerpt_length', 999 );
+		add_filter( 'crb_theme_favicon_uri', function() {
+			return get_template_directory_uri() . '/dist/images/favicon.ico';
+		} );
+		add_filter( 'carbon_fields_map_field_api_key', 'crb_get_google_maps_api_key' );
+
+		add_image_size( 'counter-image-size', 78, 78 );
+		add_image_size( 'loop-page-featured-image-size', 421, 421 );
+	}
+}
+
+# Register Sidebars
+# Note: In a child theme with custom crb_setup_theme() this function is not hooked to widgets_init
+function crb_widgets_init() {
+	$sidebar_options = array_merge( crb_get_default_sidebar_options(), array(
+		'name' => __( 'Default Sidebar', 'crb' ),
+		'id'   => 'default-sidebar',
+	) );
+
+	register_sidebar( $sidebar_options );
+}
+
+# Sidebar Options
+function crb_get_default_sidebar_options() {
+	return array(
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget__title">',
+		'after_title'   => '</h2>',
+	);
+}
+
+function crb_attach_theme_options() {
+	# Attach fields
+	include_once( CRB_THEME_DIR . 'options/theme-options.php' );
+	include_once( CRB_THEME_DIR . 'options/post-meta.php' );
+}
+
+function crb_excerpt_more() {
+	return ' ... <a href="' . get_the_permalink() . '">read more</a>';
+}
+
+function crb_excerpt_length() {
+	return 27;
+}
 
 /**
- * Implement the Custom Header feature.
+ * Returns the Google Maps API Key set in Theme Options.
+ *
+ * @return string
  */
-require get_template_directory() . '/inc/custom-header.php';
+function crb_get_google_maps_api_key() {
+	return carbon_get_theme_option( 'crb_google_maps_api_key' );
+}
 
 /**
- * Custom template tags for this theme.
+ * Get the path to a versioned bundle relative to the theme directory.
+ *
+ * @param  string $path
+ * @return string
  */
-require get_template_directory() . '/inc/template-tags.php';
+function crb_assets_bundle( $path ) {
+	static $manifest = null;
+
+	if ( is_null( $manifest ) ) {
+		$manifest_path = CRB_THEME_DIR . 'dist/manifest.json';
+
+		if ( file_exists( $manifest_path ) ) {
+			$manifest = json_decode( file_get_contents( $manifest_path ), true );
+		} else {
+			$manifest = array();
+		}
+	}
+
+	$path = isset( $manifest[ $path ] ) ? $manifest[ $path ] : $path;
+
+	return '/dist/' . $path;
+}
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Sometimes, when using Gutenberg blocks the content output
+ * contains empty unnecessary paragraph tags.
+ *
+ * In WP v5.2 this will be fixed, however, until then this function
+ * acts as a temporary solution.
+ *
+ * @see https://core.trac.wordpress.org/ticket/45495
+ *
+ * @param  string $content
+ * @return string
  */
-require get_template_directory() . '/inc/extras.php';
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'crb_fix_empty_paragraphs_in_blocks' );
+function crb_fix_empty_paragraphs_in_blocks( $content ) {
+	global $wp_version;
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+	if ( version_compare( $wp_version, '5.2', '<' ) && has_blocks() ) {
+		return $content;
+	}
 
-/**
- * Load plugin compatibility file.
- */
-require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibility.php';
+	return wpautop( $content );
+}
 
-/**
- * Load custom WordPress nav walker.
- */
-if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
-    require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
+add_filter( 'nav_menu_link_attributes', 'crb_header_menu_atts', 10, 3 );
+function crb_header_menu_atts( $atts, $item, $args )
+{
+	if ( $args->theme_location === 'header-location' ) {
+		$atts['data-text'] = $item->title;
+	}
+
+	return $atts;
+}
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes_next');
+function posts_link_attributes_next() {
+	return 'class="btn"';
+}
+
+add_filter('woocommerce_billing_fields','wpb_custom_billing_fields');
+// remove some fields from billing form
+function wpb_custom_billing_fields( $fields = array() ) {
+
+	unset($fields['billing_address_1']);
+	unset($fields['billing_address_2']);
+	unset($fields['billing_state']);
+	unset($fields['billing_city']);
+	unset($fields['billing_postcode']);
+	unset($fields['billing_country']);
+
+	return $fields;
+}
+add_filter('woocommerce_thankyou_order_received_text', 'woo_change_order_received_text', 10, 2 );
+function woo_change_order_received_text( $str, $order ) {
+    $new_str = $str . ' <a href="https://gregslaughter.com/courses/self-managing-your-rentals/">Click here to access your course and get started</a>.';
+    return $new_str;
 }

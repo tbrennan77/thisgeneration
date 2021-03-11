@@ -1,0 +1,66 @@
+/* ------------------------------------------------------------ *\
+	Section Text With Image
+\* ------------------------------------------------------------ */
+
+.section-text-with-image {
+	position: relative;
+	padding: 110px 0 130px;
+	text-align: center;
+	color: $c-white;
+	background-color: $c-dark-gray;
+
+	@include breakpoint-down(mobile) {
+		padding: 60px 0;
+	}
+
+	@include breakpoint-down(mobile-medium) {
+		padding: 45px 0;
+	}
+
+	.section__head {
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.section__head h1 {
+		max-width: 950px;
+		margin: 0 auto;
+		line-height: 1.2;
+		color: #e4e5e7;
+	}
+
+	.section__head h1 span {
+		color: $c-white;
+	}
+
+	.section__image {
+		@include over;
+	}
+
+	.section__body {
+		padding: 78px 158px 48px;
+		background-color: rgba(227, 229, 232, .41);
+		border-radius: 25px;
+
+		@include breakpoint-down(mobile) {
+			padding: 45px 25px;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+
+	.shell {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.section-text-with-image--alt {
+	padding: 60px 0 70px;
+}

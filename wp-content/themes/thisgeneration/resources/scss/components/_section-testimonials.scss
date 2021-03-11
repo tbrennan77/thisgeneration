@@ -1,0 +1,64 @@
+/* ------------------------------------------------------------ *\
+	Section Testimonials
+\* ------------------------------------------------------------ */
+
+.section-testimonials {
+	background-color: $c-dark-gray;
+
+	.section__inner {
+		display: flex;
+
+		@include breakpoint-down(mobile) {
+			display: block;
+		}
+	}
+
+	.section__aside {
+		width: 38.7%;
+		padding: 112px 15px 130px 0;
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+			padding: 50px 0 60px;
+		}
+	}
+
+	.section__content {
+		position: relative;
+		width: 61.3%;
+		background-color: white;
+
+		@include breakpoint-down(mobile) {
+			width: calc( 100% + 30px );
+			margin: 0 -15px;
+		}
+	}
+
+	.section__background {
+		@include over;
+		width: 61.3vw;
+		background-color: $c-white;
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+		}
+	}
+
+	.section__background-inner {
+		@include over;
+		opacity: 0.15;
+
+		&:before {
+			content: '';
+			@include over;
+			background-color: #d1e5f3;
+		}
+	}
+
+	.section__background-inner img {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 10;
+	}
+}

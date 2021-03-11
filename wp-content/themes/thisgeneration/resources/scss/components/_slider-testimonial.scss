@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------ *\
+	Slider Testimonial
+\* ------------------------------------------------------------ */
+
+.slider-testimonial {
+	max-width: 758px;
+	padding: 118px 0 0;
+	margin-left: auto;
+	position: relative;
+	z-index: 55;
+
+	@include breakpoint-down(mobile) {
+		padding: 35px 15px 10px;
+	}
+
+	.slick-dots {
+		position: absolute !important;
+		bottom: 52px;
+		left: 30px;
+
+		@include breakpoint-down(mobile) {
+			position: static !important;
+			margin: 15px 0;
+			text-align: center;
+		}
+	}
+}
+

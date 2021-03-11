@@ -1,0 +1,232 @@
+/* ------------------------------------------------------------ *\
+	WooCommerce and LearnDash
+\* ------------------------------------------------------------ */
+
+.learndash-cpt-sfwd-courses .article-single .article__image {
+	width: 100%;
+	min-height: 500px;
+	border-top: 1px solid #373a3e;
+	border-bottom: 1px solid #373a3e;
+}
+body.learndash-cpt.learndash-embed-responsive .ld-video {
+	margin-bottom: 40px;
+}
+.article-single .article__image {
+ 	width: 100% !important;
+}
+
+.single-sfwd-lessons,
+.woocommerce-page {
+	.article-single .article__thumbnail {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	WooCommerce
+\* ------------------------------------------------------------ */
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+	font-weight: bold;
+	font-size: 32px;
+    margin-bottom: 10px;
+    color: $c-blue;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	background-color: $c-base;
+	margin-top: 30px;
+	padding: 15px 14px;
+	min-width: 200px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2);
+
+	&:hover {
+		background: color(#{$c-blue} a(90%));
+		color: $c-white	;
+		text-decoration: none;
+		box-shadow: none;
+	}
+}
+.woocommerce-product-details__short-description p {
+	font-size: 18px;
+}
+.product_meta {
+	.posted_in, 
+	.tagged_as {
+		font-size: 12px;
+	}
+	.posted_in {
+		display: none;
+	}
+}
+.single-product {
+	.article-single .article__excerpt {
+		display: none;
+	}
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	display: none;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.woocommerce-page {
+	.article-single .article__inner {
+		min-height: 500px;
+	}
+	.section-intro-single--page {
+		height: 200px;
+	}
+	.section-default--page .section__body {
+		width: 100%;
+	}
+	.section-default--page .section__aside {
+		width: 0%;
+	}
+	.woocommerce #content table.cart td.actions .input-text, 
+	.woocommerce table.cart td.actions .input-text, 
+	.woocommerce-page #content table.cart td.actions 
+	.input-text, .woocommerce-page table.cart td.actions .input-text {
+		width: 150px;
+	}
+	.cart_totals h2 {
+		font-size: 24px;
+	}
+	.woocommerce-info {
+		border-top-color: $c-blue;
+	}
+	.woocommerce-info::before {
+		color: $c-blue;
+	}
+	.woocommerce form .form-row input.input-text {
+		border: 1px solid $c-gray;
+	    padding: 10px;
+	    height: 40px;
+	    border-radius: 3px;
+	}
+	/* Hide the additional information tab */
+	.woocommerce-additional-fields {
+	    display: none !important;
+	}
+	.woocommerce #respond input#submit, 
+	.woocommerce a.button, 
+	.woocommerce button.button, 
+	.woocommerce input.button {
+		height: 50px;
+	}
+	.writer {
+		display: none;
+	}
+}
+.woocommerce-checkout {
+	.woocommerce {
+		padding: 0 12.5%;
+
+		@include breakpoint-down(mobile) {
+			padding: 0 2.5%;
+		}
+	}
+	.woocommerce .col2-set .col-1, 
+	.woocommerce-page .col2-set .col-1 {
+	    width: 100%;
+	}
+	#order_review_heading {
+		margin-top: 0.835em;
+	}
+
+	.woocommerce form .form-row input.input-text, 
+	.woocommerce form .form-row textarea {
+		border: 2px solid $c-gray;
+		border-radius: 5px;
+		min-height: 45px;
+	}
+	.article-single .article__head {
+		padding-bottom: 25px;
+	}
+}
+.woocommerce-cart {
+	#coupon_code {
+		min-height: 45px;
+		border: 2px solid $c-gray;
+		border-radius: 5px;
+	}
+	.article-single .article__head {
+		padding-bottom: 25px;
+	}
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+    float: none;
+    width: 100%;
+    display: block;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    margin-bottom: 30px;
+    float: none;
+    width: 100%;
+}
+.woocommerce-MyAccount-navigation ul {
+    margin-left: 0;
+    padding-left: 0;
+    display: inline;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+.woocommerce-MyAccount-navigation ul li {
+    display: inline-block;
+    min-height: 40px;
+}
+.woocommerce-MyAccount-navigation ul li a, 
+.learndash-resume-button  {
+    border: 2px solid $c-base;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.learndash-resume-button  {
+	color: $c-white;
+	background-color: $c-base;
+	margin: 30px 0;
+	display: block;
+    text-align: center;
+    font-weight: bold;
+}
+.resume-item-name {
+	display: none;
+}
+.learndash-resume-button input[type="button"] {
+	background: transparent;
+    border-width: 0px;
+    font-weight: bold;
+}
+body.learndash-cpt.learndash-embed-responsive .ld-video {
+	margin-bottom: 40px;
+}
+.woocommerce-account {
+	.section__body {
+		padding: 0 12.5%;
+
+		@include breakpoint-down(mobile) {
+			padding: 0 2.5%;
+		}
+	}
+}
+.woocommerce-account, 
+.woocommerce-cart, 
+.woocommerce-checkout,
+.woocommerce-order-received {
+	.article-single .article__socials .socials,
+	.article-single .article__socials p {
+		display: none;
+	}
+}
+
+.learndash-wrapper .ld-content-actions .ld-content-action {
+	margin: auto 0;
+	text-align: center;
+	margin-top: 0;
+}
+.learndash-wrapper .ld-content-actions .ld-content-action .ld-course-step-back {
+	margin: auto 0;
+	margin-top: 10px;
+	display: block;
+}

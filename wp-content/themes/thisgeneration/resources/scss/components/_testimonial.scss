@@ -1,0 +1,113 @@
+/* ------------------------------------------------------------ *\
+	Testimonial
+\* ------------------------------------------------------------ */
+
+.testimonial {
+	blockquote {
+		position: relative;
+		font-size: 25px;
+		line-height: 1.6;
+		margin-bottom: 89px;
+		padding-top: 50px;
+		padding-left: 30px;
+
+		@include breakpoint-down(mobile) {
+			padding-top: 30px;
+			padding-left: 15px;
+			margin-bottom: 60px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 22px;
+			margin-bottom: 40px;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			font-size: 18px;
+			margin-bottom: 25px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 117px;
+			height: 89px;
+			background: #fff url(../images/ico/ico-quote.png) no-repeat center;
+			background-size: cover;
+			background-color: transparent;
+
+			@include breakpoint-down(mobile-medium) {
+				width: 94px;
+				height: 71px;
+			}
+		}
+	}
+
+	h1,
+	h2 {
+		text-align: center;
+	}
+
+	h1 {
+		position: relative;
+		padding-bottom: 19px;
+		margin-bottom: 19px;
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 26px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			background-color: #2077bf;
+			transform: translateX(-50%);
+			height: 5px;
+			width: 129px;
+			max-width: 100%;
+		}
+	}
+
+	h2 {
+		margin-bottom: 110px;
+		font-style: italic;
+		font-weight: 400;
+		font-size: 35px;
+		font-family: $ff-sans-serif;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 75px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 22px;
+			margin-bottom: 45px;
+		}
+	}
+
+	h2 a {
+		font-weight: 700;
+	}
+
+	.testimonial__image {
+		position: relative;
+		width: 139px;
+		height: 139px;
+		margin: 0 auto;
+		border: 3px solid #2584c9;
+		border-radius: 50%;
+	}
+
+	.testimonial__image img {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 123px;
+		height: 123px;
+	}
+}

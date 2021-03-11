@@ -1,9 +1,11 @@
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <label>
-        <input type="search" class="search-field form-control" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'thisgeneration' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search for:', 'label', 'thisgeneration' ); ?>">
-    </label>
-    <input type="submit" class="search-submit btn btn-default" value="<?php echo esc_attr_x( 'Search', 'submit button', 'thisgeneration' ); ?>">
+<form action="<?php echo home_url( '/' ); ?>" class="search-form" method="get" role="search">
+	<label>
+		<span class="screen-reader-text"><?php _e( 'Search for:', 'crb' ); ?></span>
+
+		<input type="text" title="<?php esc_attr_e( 'Search for:', 'crb' ); ?>" name="s" value="" id="s" class="search__field" />
+	</label>
+
+	<button type="submit" class="search__btn notext">
+		<?php echo esc_attr( __( 'Search', 'crb' ) ); ?>
+	</button>
 </form>
-
-
-

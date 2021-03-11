@@ -1,0 +1,79 @@
+/* ------------------------------------------------------------ *\
+	Section Callout
+\* ------------------------------------------------------------ */
+
+.section-callout {
+	position: relative;
+	z-index: 15;
+	padding: 103px 0 160px;
+	background: $c-dark-blue;
+	color: $c-white;
+	text-align: center;
+
+	@include breakpoint-down(mobile) {
+		padding: 60px 0 80px;
+	}
+
+	@include breakpoint-down(mobile-medium) {
+		padding: 45px 0 65px;
+	}
+
+	.section__head {
+		margin-bottom: 25px;
+	}
+
+	.section__head h1 {
+		text-transform: uppercase;
+		font-size: 50px;
+
+		@include breakpoint-down(mobile) {
+			font-size: 36px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 32px;
+		}
+	}
+
+	.section__entry {
+		max-width: 970px;
+		margin: 0 auto 43px;
+		font-size: 21px;
+		line-height: 1.43;
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 18px;
+		}
+	}
+
+	.section__form {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+}
+
+/*section-callout--alt*/
+
+.section-callout--alt {
+	padding-bottom: 133px;
+
+	@include breakpoint-down(mobile) {
+		padding-bottom: 75px;
+	}
+
+	@include breakpoint-down(mobile-medium) {
+		padding-bottom: 55px;
+	}
+
+	.section__head h1 {
+		font-size: 45px;
+
+		@include breakpoint-down(mobile) {
+			font-size: 36px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 32px;
+		}
+	}
+}

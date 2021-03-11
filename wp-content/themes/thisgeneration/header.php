@@ -1,100 +1,90 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WP_Bootstrap_Starter
- */
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-<?php wp_head(); ?>
+	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+	<meta name="viewport" id="viewportMeta" content="width=1440, initial-scale=1.0" />
+
+	<script>
+	   (function(window, undefined) {
+		   function viewportMetaContent() {
+			   var viewportMeta = document.getElementById('viewportMeta');
+			   if ( screen.width < 768 ) {
+				   viewportMeta.setAttribute('content', 'width=device-width, user-scalable=no');
+			   } else {
+				   viewportMeta.setAttribute('content', 'width=1440');
+			   };
+		   };
+
+		   viewportMetaContent();
+		   window.addEventListener('resize', viewportMetaContent, false);
+	   })(window);
+	</script>
+
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
+	<div class="wrapper">
+		<div class="wrapper__inner">
+			<header class="header">
+				<div class="shell shell--lg">
+					<div class="header__inner">
+						<a href="<?php echo esc_url( get_home_url() ); ?>" class="logo">
+							<?php
+								echo esc_html( get_bloginfo( 'name' ) );
+							?>
 
-<?php 
+							<img src="<?php bloginfo('stylesheet_directory'); ?>/resources/images/logo.png" alt="">
+						</a>
 
-    // WordPress 5.2 wp_body_open implementation
-    if ( function_exists( 'wp_body_open' ) ) {
-        wp_body_open();
-    } else {
-        do_action( 'wp_body_open' );
-    }
+						<?php
+							$header_button_link = carbon_get_theme_option( 'crb_header_button_link' );
+							$header_button_text = carbon_get_theme_option( 'crb_header_button_text' );
 
-?>
+							$has_button = ! empty( $header_button_link ) && ! empty( $header_button_text );
+						?>
 
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'thisgeneration' ); ?></a>
-    <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
-        <div class="container">
-            <nav class="navbar navbar-expand-xl p-0">
-                <div class="navbar-brand">
-                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-                        <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                            <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        </a>
-                    <?php else : ?>
-                        <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
-                    <?php endif; ?>
+						<?php if ( has_nav_menu( 'header-location' ) || $has_button ) : ?>
+							<nav class="nav">
+								<ul>
+									<?php
+										if ( has_nav_menu( 'header-location' ) ) {
+											wp_nav_menu( array(
+												'container' => '',
+												'items_wrap' => '%3$s',
+												'theme_location' => 'header-location'
+											) );
+										}
+									?>
 
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+									<?php if ( $has_button ) : ?>
+										<li class="nav__btn">
+											<a href="<?php echo esc_url( $header_button_link ); ?>">
+												<?php
+													echo esc_html( $header_button_text );
+												?>
+											</a>
+										</li>
+									<?php endif; ?>
+								</ul>
+							</nav><!-- /.nav -->
+						<?php endif; ?>
 
-                <?php
-                wp_nav_menu(array(
-                'theme_location'    => 'primary',
-                'container'       => 'div',
-                'container_id'    => 'main-nav',
-                'container_class' => 'collapse navbar-collapse justify-content-end',
-                'menu_id'         => false,
-                'menu_class'      => 'navbar-nav',
-                'depth'           => 3,
-                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                'walker'          => new wp_bootstrap_navwalker()
-                ));
-                ?>
+						<?php if ( has_nav_menu( 'header-location' ) || $has_button ) : ?>
+							<a href="#" class="nav-trigger js-nav-trigger">
+								<span></span>
 
-            </nav>
-        </div>
-	</header><!-- #masthead -->
-    <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
-        <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
-            <div class="container">
-                <h1>
-                    <?php
-                    if(get_theme_mod( 'header_banner_title_setting' )){
-                        echo esc_attr( get_theme_mod( 'header_banner_title_setting' ) );
-                    }else{
-                        echo 'WordPress + Bootstrap';
-                    }
-                    ?>
-                </h1>
-                <p>
-                    <?php
-                    if(get_theme_mod( 'header_banner_tagline_setting' )){
-                        echo esc_attr( get_theme_mod( 'header_banner_tagline_setting' ) );
-                }else{
-                        echo esc_html__('To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize','thisgeneration');
-                    }
-                    ?>
-                </p>
-                <a href="#content" class="page-scroller"><i class="fa fa-fw fa-angle-down"></i></a>
-            </div>
-        </div>
-    <?php endif; ?>
-	<div id="content" class="site-content">
-		<div class="container">
-			<div class="row">
-                <?php endif; ?>
+								<span></span>
+
+								<span></span>
+							</a>
+						<?php endif; ?>
+					</div><!-- /.header__inner -->
+				</div><!-- /.shell -->
+			</header><!-- /.header -->
+
+			<div class="main">

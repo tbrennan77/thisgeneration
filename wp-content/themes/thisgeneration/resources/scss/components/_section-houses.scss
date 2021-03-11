@@ -1,0 +1,27 @@
+/* ------------------------------------------------------------ *\
+	Section Houses
+\* ------------------------------------------------------------ */
+
+.section-houses {
+	margin: 50px 0;
+
+	.section__head {
+		margin-bottom: 45px;
+		text-align: center;
+	}
+
+	.section__head h1 {
+		max-width: 1040px;
+		margin: 0 auto;
+		line-height: 1.2;
+	}
+
+	.section__foot {
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	.section__foot img {
+		width: 532px;
+	}
+}

@@ -1,0 +1,54 @@
+/* ------------------------------------------------------------ *\
+	Articles
+\* ------------------------------------------------------------ */
+
+.articles {
+	max-width: 1190px;
+	margin: 0 auto;
+
+	.articles__items {
+		list-style: none;
+		padding: 0;
+	}
+
+	.articles__items .articles__item:nth-child(even) .article {
+		flex-direction: row-reverse;
+
+		.article__content {
+			position: relative;
+			flex: 1 1;
+			padding: 20px 40px 65px;
+			margin-left: 0;
+
+			@include breakpoint-down(mobile) {
+				margin-right: 0;
+				padding: 35px 25px;
+			}
+		}
+
+		.article__image + .article__content {
+			margin-right: -210px;
+			padding-right: 285px;
+
+			@include breakpoint-down(mobile) {
+				margin-right: 0;
+				padding-right: 25px;
+				margin-top: -110px;
+				padding-top: 125px;
+			}
+
+			@include breakpoint-down(mobile-small) {
+				margin-top: -90px;
+				padding-top: 105px;
+			}
+		}
+	}
+
+	.articles__item + .articles__item {
+		margin-top: 72px;
+
+		@include breakpoint-down(mobile) {
+			margin-top: 45px;
+		}
+	}
+}

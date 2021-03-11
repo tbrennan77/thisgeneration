@@ -1,0 +1,159 @@
+/* ------------------------------------------------------------ *\
+	Counters
+\* ------------------------------------------------------------ */
+
+.counters {
+	> ul {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: -25px;
+
+		@include breakpoint-down(mobile) {
+			justify-content: center;
+		}
+	}
+
+	> ul > li {
+		padding: 25px;
+		width: 300px;
+
+		@include breakpoint-down(mobile) {
+			width: 50%;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			width: 100%;
+		}
+	}
+}
+
+/*counters--block*/
+.counters--block {
+	> ul {
+		display: block;
+		margin: 0 ;
+	}
+
+	> ul > li {
+		padding: 0;
+		width: 100%;
+	}
+
+	> ul > li + li {
+		margin-top: 72px;
+
+		@include breakpoint-down(mobile) {
+			margin-top: 40px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			margin-top: 30px;
+		}
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Counter
+\* ------------------------------------------------------------ */
+
+.counter {
+	position: relative;
+	height: 100%;
+	color: $c-blue;
+	font-weight: 900;
+	font-family: $ff-sans-serif-2;
+	text-align: center;
+	line-height: 0.9;
+
+	.counter__inner {
+		padding-bottom: 35px;
+
+		@include breakpoint-down(mobile-medium) {
+			padding-bottom: 25px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			background-color: $c-white;
+			transform: translateX(-50%);
+			height: 5px;
+			width: 129px;
+			max-width: 100%;
+		}
+	}
+
+	.counter__image {
+		height: 78px;
+		margin-bottom: 12px;
+	}
+
+	.counter__image img {
+		max-height: 100%;
+	}
+
+	.counter__number {
+		color: $c-white;
+		font-size: 65px;
+		line-height: 1.2;
+
+		@include breakpoint-down(mobile) {
+			font-size: 48px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 40px;
+		}
+	}
+
+	.counter__title {
+		font-size: 45px;
+		line-height: inherit;
+		line-height: 1.2;
+
+		@include breakpoint-down(mobile) {
+			font-size: 32px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			font-size: 28px;
+		}
+	}
+}
+
+/*counter--alt*/
+.counter--alt {
+	display: flex;
+	align-items: flex-start;
+	text-align: left;
+	line-height: 0.88;
+
+	.counter__inner {
+		position: relative;
+		flex: 1 1;
+		padding: 12px 0 27px 28px;
+
+		&:after {
+			left: 27px;
+			transform: translateX(0);
+		}
+	}
+
+	.counter__image {
+		margin-bottom: 0;
+		/*margin-top: 13px;*/
+	}
+
+	.counter__number {
+		font-size: 45px;
+		line-height: inherit;
+	}
+
+	.counter__title {
+		line-height: inherit;
+	}
+}

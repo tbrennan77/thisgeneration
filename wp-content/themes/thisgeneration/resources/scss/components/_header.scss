@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header {
+	padding: 29px 0 ;
+	width: 100%;
+	position: relative;
+	z-index: 9999;
+
+	@include breakpoint-down(mobile) {
+		padding: 15px 0;
+	}
+
+	.header__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Admin Bar (if header is fixed)
+\* ------------------------------------------------------------ */
+
+/*remove comments for fixed hader*/
+
+// body.admin-bar {
+// 	.header {
+// 		margin-top: 32px;
+
+// 		@include breakpoint-down(admin-bar){
+// 			margin-top: 46px;
+// 		}
+// 	}
+// }
