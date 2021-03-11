@@ -1,7 +1,12 @@
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
+/* imports */
+@import url("https://use.typekit.net/sog3nwl.css"); // Typekit for Promixa-nova
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: $ff-proxima;
   clear: both;
   color: #24292e;
   font-weight: 600;
