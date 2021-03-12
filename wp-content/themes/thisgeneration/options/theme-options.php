@@ -24,6 +24,7 @@ Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
 	->add_tab( __( 'Socials', 'crb' ), array(
 		Field::make( 'text', 'crb_facebook_url', __( 'Facebook link', 'crb' ) ),
 		Field::make( 'text', 'crb_instagram_url', __( 'Instagram link', 'crb' ) ),
+		Field::make( 'text', 'crb_youtube_url', __( 'YouTube link', 'crb' ) ),
 		Field::make( 'text', 'crb_linkedin_url', __( 'LinkedIn link', 'crb' ) )
 	) )
 	->add_tab( __( 'Blog callout', 'crb' ), array(

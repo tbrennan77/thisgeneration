@@ -23,8 +23,22 @@
 
 					<div class="shell">
 						<div class="footer__cols">
+
+							<div class="footer__col footer__col--left">
+								<div class="footer__image">
+									<a href="<?php echo esc_url( get_home_url() ); ?>">
+										<img src="<?php bloginfo('stylesheet_directory'); ?>/resources/images/logo-circle.png" alt="">
+									</a>
+								</div><!-- /.footer__image -->
+								<?php
+									crb_render_fragment( 'socials', array(
+										'additional_class' => 'socials--blue socials--footer'
+									) );
+								?>
+							</div><!-- /.footer__col -->
+
 							<?php if ( has_nav_menu( 'footer-left-location' ) ) : ?>
-								<div class="footer__col footer__col--left">
+								<div class="footer__col footer__col--center">
 									<?php
 										wp_nav_menu( array(
 											'container' => 'nav',
@@ -34,14 +48,6 @@
 									?>
 								</div><!-- /.footer__col -->
 							<?php endif; ?>
-
-							<div class="footer__col footer__col--center">
-								<div class="footer__image">
-									<a href="<?php echo esc_url( get_home_url() ); ?>">
-										<img src="<?php bloginfo('stylesheet_directory'); ?>/resources/images/logo-circle.png" alt="">
-									</a>
-								</div><!-- /.footer__image -->
-							</div><!-- /.footer__col -->
 
 							<?php if ( has_nav_menu( 'footer-right-location' ) ) : ?>
 								<div class="footer__col footer__col--right">
@@ -55,12 +61,6 @@
 								</div><!-- /.footer__col -->
 							<?php endif; ?>
 						</div><!-- /.footer__cols -->
-
-						<?php
-							crb_render_fragment( 'socials', array(
-								'additional_class' => 'socials--blue'
-							) );
-						?>
 					</div><!-- /.shell -->
 				</div><!-- /.footer__body -->
 

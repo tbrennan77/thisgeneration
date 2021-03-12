@@ -40,7 +40,7 @@
 	}
 
 	ul li i.fa-linkedin-in {
-		font-size: 25px;
+		//font-size: 25px;
 	}
 }
 
@@ -55,6 +55,28 @@
 	ul li a:hover {
 		border-color: $c-dark-gray;
 		color: $c-dark-gray;
+	}
+}
+
+.socials--footer {
+	font-size: $font-size-socials;
+
+	ul {
+		//display: block;
+	}
+
+	ul li {
+		display: inline;
+	}
+
+	ul li a {
+		border-color: $c-light-gray;
+		color: $c-dark-gray;
+	}
+
+	ul li a:hover {
+		border-color: $c-dark-gray;
+		color: $c-black;
 	}
 }
 

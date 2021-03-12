@@ -366,6 +366,7 @@ Container::make( 'user_meta', __( 'User options', 'crb' ) )
 	->add_fields( array(
 		Field::make( 'text', 'crb_user_facebook_link', __( 'Facebook link', 'crb' ) ),
 		Field::make( 'text', 'crb_user_instagram_link', __( 'Instagram link', 'crb' ) ),
+		Field::make( 'text', 'crb_user_youtube_link', __( 'YouTube link', 'crb' ) ),
 		Field::make( 'text', 'crb_user_linkedin_link', __( 'LinkedIn link', 'crb' ) )
 	) );
 
