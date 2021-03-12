@@ -16,8 +16,8 @@
 	}
 
 	.section__body {
-		padding: 110px 0 92px;
-		background: $c-dark-gray;
+		padding: 20px 0 92px;
+		background: $c-white;
 
 		@include breakpoint-down(mobile) {
 			padding: 55px 0 65px;

@@ -148,7 +148,7 @@ if ( ! function_exists( 'crb_setup_theme' ) ) {
 		} );
 		add_filter( 'carbon_fields_map_field_api_key', 'crb_get_google_maps_api_key' );
 
-		add_image_size( 'counter-image-size', 78, 78 );
+		add_image_size( 'counter-image-size', 100, 100 );
 		add_image_size( 'loop-page-featured-image-size', 421, 421 );
 	}
 }

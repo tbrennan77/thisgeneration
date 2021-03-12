@@ -88,7 +88,7 @@
 	}
 
 	.counter__image {
-		height: 78px;
+		height: 178px;
 		margin-bottom: 12px;
 	}
 
@@ -97,23 +97,29 @@
 	}
 
 	.counter__number {
-		color: $c-white;
-		font-size: 65px;
-		line-height: 1.2;
+		color: $c-dark-gray;
+	    text-transform: none;
+	    font-weight: bold;
+	    padding: 10px 20px;
+	    font-size: 28px;
+		margin-top: 1.5rem;
 
 		@include breakpoint-down(mobile) {
-			font-size: 48px;
+			//font-size: 24px;
 		}
 
 		@include breakpoint-down(mobile-medium) {
-			font-size: 40px;
+			//font-size: 40px;
 		}
 	}
 
 	.counter__title {
-		font-size: 45px;
-		line-height: inherit;
-		line-height: 1.2;
+		font-size: 24px;
+		    text-transform: none;
+	    font-weight: bold;
+	    padding: 0px;
+	    font-size: 28px;
+		color: $c-dark-gray;
 
 		@include breakpoint-down(mobile) {
 			font-size: 32px;

@@ -23,7 +23,7 @@
 										<div class="counter">
 											<div class="counter__image">
 												<?php
-													echo wp_get_attachment_image( $item['image'], 'counter-image-size' );
+													echo wp_get_attachment_image( $item['image'], 'loop-page-featured-image-size' );
 												?>
 											</div><!-- /.counter__image -->
 

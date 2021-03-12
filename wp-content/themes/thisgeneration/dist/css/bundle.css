@@ -5016,24 +5016,24 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
       width: 129px;
       max-width: 100%; }
 .counter .counter__image {
-    height: 78px;
+    height: 178px;
     margin-bottom: 12px; }
 .counter .counter__image img {
     max-height: 100%; }
 .counter .counter__number {
-    color: #fff;
-    font-size: 65px;
-    line-height: 1.2; }
-@media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
-      .counter .counter__number {
-        font-size: 48px; } }
-@media (max-width: 575px) {
-      .counter .counter__number {
-        font-size: 40px; } }
+    color: #3c4044;
+    text-transform: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 28px;
+    margin-top: 1.5rem; }
 .counter .counter__title {
-    font-size: 45px;
-    line-height: inherit;
-    line-height: 1.2; }
+    font-size: 24px;
+    text-transform: none;
+    font-weight: bold;
+    padding: 0px;
+    font-size: 28px;
+    color: #3c4044; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
       .counter .counter__title {
         font-size: 32px; } }
@@ -6201,8 +6201,8 @@ body .nav ul li:hover > ul {
 .section-counters .section__head h2 {
     font-size: 40px; }
 .section-counters .section__body {
-    padding: 110px 0 92px;
-    background: #3c4044; }
+    padding: 20px 0 92px;
+    background: #fff; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
       .section-counters .section__body {
         padding: 55px 0 65px; } }
