@@ -4,6 +4,7 @@
 
 .section-cols {
 	padding: 90px 0;
+	border-bottom: 1px solid $c-light-gray;
 
 	@include breakpoint-down(mobile) {
 		padding: 45px 0;

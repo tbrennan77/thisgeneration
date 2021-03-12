@@ -18,13 +18,19 @@
 	}
 
 	.section__head span {
-		color: $c-blue;
+		color: $c-dark-gray;
+		text-transform: none;
+		font-weight: bold;
+		padding: 10px 20px;
+		//background-color: $c-light-gray;
+		//border-radius: 5px;
+		font-size: 28px;
 	}
 
 	.section__body {
 		margin-top: -45px;
 		padding: 80px 0 60px;
-		background: $c-gray;
+		background: $c-white;
 	}
 
 	.section__entry {

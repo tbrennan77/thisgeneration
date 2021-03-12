@@ -51,7 +51,7 @@
 		&:after {
 			display: block;
 		    content: attr(data-text);
-		    font-weight: 700;
+		    font-weight: 500;
 		    height: 0;
 		    overflow: hidden;
 		    visibility: hidden;
@@ -207,7 +207,7 @@
 }
 
 .nav > ul > li.current-menu-item > a {
-	font-weight: 700;
+	font-weight: 500;
 
 	&:before {
 		height: 16px;
@@ -216,7 +216,7 @@
 
 body .nav ul li:hover > a {
 	color: $c-base;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 body .nav > ul > li.nav__btn:hover a {
