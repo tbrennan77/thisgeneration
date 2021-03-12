@@ -18,5 +18,6 @@
 
 /*shell--lg*/
 .shell--lg {
-	max-width: calc( #{$shell-max-width-lg} + #{$shell-gutter} * 2);
+	// max-width: calc( #{$shell-max-width-lg} + #{$shell-gutter} * 2);
+	max-width: calc( #{$shell-max-width});
 }
