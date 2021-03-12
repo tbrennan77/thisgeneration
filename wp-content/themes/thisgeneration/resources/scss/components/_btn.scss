@@ -14,7 +14,7 @@
 	line-height: 1.5;
 	text-transform: none;
 	color: $c-white;
-	background: $c-lt-blue;
+	background: $c-gray;
 	padding: .75rem 1.75rem;
 	border: 1px solid transparent;
 	border-radius: .375rem;
@@ -26,21 +26,12 @@
 		font-size: 1rem;
 	}
 
-	@include breakpoint-down(mobile-medium) {
-		padding-top: 12px;
-		padding-bottom: 12px;
-		font-size: 20px;
-		border-width: 3px;
-	}
-
-	@include breakpoint-down(mobile-small) {
-		font-size: 18px;
-	}
 
 	&:hover {
 		background: transparent;
 		color: $c-base;
-		box-shadow: 0 13px 43px rgba(33, 30, 30, 0.4);
+		//box-shadow: 0 13px 43px rgba(33, 30, 30, 0.4);
+		border: 1px solid $c-light-gray;
 	}
 }
 
@@ -57,9 +48,10 @@
 .btn--ghost {
 	background: transparent;
 	color: $c-base;
+	border: 1px solid $c-light-gray;
 
 	&:hover {
-		background: $c-lt-blue;
+		background: $c-gray;
 		color: $c-white;
 	}
 }

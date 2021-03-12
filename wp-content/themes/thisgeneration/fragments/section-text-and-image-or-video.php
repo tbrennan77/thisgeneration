@@ -59,7 +59,7 @@
 									<ul>
 										<?php if ( $has_button_1 ) : ?>
 											<li>
-												<a href="<?php echo esc_url( $section['button_1_link'] ); ?>" class="btn btn--block btn--ghost <?php if (!($section['button_1_link'])) { echo "disabled"; } ?>">
+												<a href="<?php echo esc_url( $section['button_1_link'] ); ?>" class="btn btn--block <?php if (!($section['button_1_link'])) { echo "disabled"; } ?>">
 													<?php
 														echo esc_html( $section['button_1_text'] );
 													?>
@@ -69,7 +69,7 @@
 
 										<?php if ( $has_button_2 ) : ?>
 											<li>
-												<a href="<?php echo esc_url( $section['button_2_link'] ); ?>" class="btn btn--block">
+												<a href="<?php echo esc_url( $section['button_2_link'] ); ?>" class="btn btn--block btn--ghost">
 													<?php
 														echo esc_html( $section['button_2_text'] );
 													?>
