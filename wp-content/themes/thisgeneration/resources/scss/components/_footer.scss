@@ -9,9 +9,9 @@
 	.footer__body {
 		position: relative;
 		padding: 140px 0 63px;
-		border: solid $c-dark-gray;
-		border-width: 0px 0 0px 0;
-		background-color: $c-light-gray;
+		border: solid $c-gray;
+		border-width: 1px 0 0px 0;
+		background-color: $c-white;
 		text-align: center;
 
 		@include breakpoint-down(mobile) {
@@ -120,10 +120,12 @@
 		display: inline-block;
 		position: relative;
 		text-decoration: none;
-		color: $c-base;
+		color: $c-gray;
+		font-size: $font-size-footer;
+		text-transform: lowercase;
 
 		&:hover {
-			color: $c-base;
+			color: $c-white;
 		}
 
 		&:after {
@@ -134,7 +136,7 @@
 			left: 0;
 			width: 100%;
 			height: 0;
-			background: $c-blue;
+			background: $c-pink;
 			transition: height $t-duration;
 		}
 	}
@@ -172,8 +174,13 @@
 		padding: 30px 0;
 		font-size: .875rem !important;;
 		font-weight: 300;
-		color: $c-dark-gray;
-		background-color: $c-light-gray;	
+		color: $c-gray;
+		background-color: $c-white;	
+
+		.shell {
+			padding: 30px 0;
+			border-top: 1px solid $c-light-gray;
+		}
 
 		.copyright {
 			display: inline;
