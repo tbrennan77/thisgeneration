@@ -60,6 +60,7 @@
 
 .socials--footer {
 	font-size: $font-size-socials;
+	text-align: left;
 
 	ul {
 		//display: block;
@@ -71,12 +72,19 @@
 
 	ul li a {
 		border-color: $c-light-gray;
-		color: $c-dark-gray;
+		color: $c-gray;
+		width: 41px;
+		height: 41px;
+		border: 0px solid $c-white;
 	}
 
 	ul li a:hover {
 		border-color: $c-dark-gray;
 		color: $c-black;
+	}
+
+	@include breakpoint-down(mobile) {
+		text-align: center;
 	}
 }
 

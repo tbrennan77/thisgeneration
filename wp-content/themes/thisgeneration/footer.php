@@ -3,7 +3,11 @@
 			<footer class="footer">
 				<?php
 					$footer_background_image = carbon_get_theme_option( 'crb_footer_background_image' );
-					$footer_copyright = carbon_get_theme_option( 'crb_footer_copyright' );
+					$footer_copyright    = carbon_get_theme_option( 'crb_footer_copyright' );
+					$footer_column_one   = carbon_get_theme_option( 'crb_footer_column_1_title' );
+					$footer_column_two   = carbon_get_theme_option( 'crb_footer_column_2_title' );
+					$footer_column_three = carbon_get_theme_option( 'crb_footer_column_3_title' );
+					$footer_column_four  = carbon_get_theme_option( 'crb_footer_column_4_title' );
 				?>
 
 				<?php if ( ! empty( carbon_get_the_post_meta( 'crb_show_footer_top_logo' ) ) ) : ?>
@@ -25,6 +29,7 @@
 						<div class="footer__cols">
 
 							<div class="footer__col footer__col--left">
+								<?php if($footer_column_one){?><div class="footer-header"><?php echo $footer_column_one; ?></div><?php } ?>
 								<div class="footer__image">
 									<a href="<?php echo esc_url( get_home_url() ); ?>">
 										<img src="<?php bloginfo('stylesheet_directory'); ?>/resources/images/logo-circle.png" alt="">
@@ -39,6 +44,7 @@
 
 							<?php if ( has_nav_menu( 'footer-left-location' ) ) : ?>
 								<div class="footer__col footer__col--center">
+									<div class="footer-header"><?php echo $footer_column_two; ?></div>
 									<?php
 										wp_nav_menu( array(
 											'container' => 'nav',
@@ -49,8 +55,22 @@
 								</div><!-- /.footer__col -->
 							<?php endif; ?>
 
+							<?php if ( has_nav_menu( 'footer-middle-location' ) ) : ?>
+								<div class="footer__col footer__col--center">
+									<div class="footer-header"><?php echo $footer_column_three; ?></div>
+									<?php
+										wp_nav_menu( array(
+											'container' => 'nav',
+											'container_class' => 'footer__nav',
+											'theme_location' => 'footer-middle-location'
+										) );
+									?>
+								</div><!-- /.footer__col -->
+							<?php endif; ?>
+
 							<?php if ( has_nav_menu( 'footer-right-location' ) ) : ?>
-								<div class="footer__col footer__col--right">
+								<div class="footer__col footer__col--center">
+									<div class="footer-header"><?php echo $footer_column_four; ?></div>
 									<?php
 										wp_nav_menu( array(
 											'container' => 'nav',

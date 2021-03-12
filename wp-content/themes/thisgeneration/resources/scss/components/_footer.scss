@@ -55,10 +55,13 @@
 	}
 
 	.footer__col--center {
-		width: 295px;
+		// width: 295px;
+		width: 20%;
+		text-align: left;
 
 		@include breakpoint-down(mobile) {
-			width: 175px;
+			width: 100%;
+			text-align: center;
 		}
 
 		@include breakpoint-down(mobile-medium) {
@@ -69,18 +72,22 @@
 
 	.footer__col--left,
 	.footer__col--right {
-		display: flex;
-		flex: 1 1;
+		//display: flex;
+		//flex: 1 1;
+		width: 40%;
+		text-align: left;
 
 		@include breakpoint-down(mobile) {
-			flex: 0 0 100%;
+			//flex: 0 0 100%;
 			display: block;
 			width: 100%;
+			text-align: center;
 		}
 	}
 
 	.footer__col--right {
 		justify-content: flex-end;
+		width: 20%;
 	}
 
 	.footer__nav {
@@ -109,6 +116,20 @@
 		@include breakpoint-down(mobile-small) {
 			display: block;
 			//font-size: 20px;
+		}
+	}
+
+	.footer-header {
+		font-weight: 500;
+		color: #333232;
+		margin-top: 0;
+		text-align: left;
+		padding: 5px 0px;
+		line-height: 1.62;
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+			text-align: center;
 		}
 	}
 
@@ -241,10 +262,12 @@
 	.footer__image {
 		width: 100%;
 		display: block;
+		padding: 0 30px;
 
 		@include breakpoint-down(mobile-medium) {
 			width: 180px;
 			margin: 0 auto;
+			padding: 0px;
 		}
 
 		@include breakpoint-down(mobile-small) {

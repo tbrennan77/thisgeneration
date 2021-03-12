@@ -126,6 +126,7 @@ if ( ! function_exists( 'crb_setup_theme' ) ) {
 			'header-location' => __( 'Header location', 'crb' ),
 			'footer-left-location' => __( 'Footer left location', 'crb' ),
 			'footer-right-location' => __( 'Footer right location', 'crb' ),
+			'footer-middle-location' => __( 'Footer middle location', 'crb' ),
 			'footer-bottom-location' => __( 'Footer bottom location', 'crb' )
 		) );
 

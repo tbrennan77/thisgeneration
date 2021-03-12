@@ -4,6 +4,7 @@ function crb_get_social_icon_names() {
 	$socials = [
 		'facebook-f' => 'facebook',
 		'instagram' => 'instagram',
+		'youtube' => 'youtube',
 		'linkedin-in' => 'linkedin'
 	];
 

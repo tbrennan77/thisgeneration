@@ -11,6 +11,10 @@ Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
 	) )
 	->add_tab( __( 'Footer', 'crb' ), array(
 		Field::make( 'image', 'crb_footer_background_image', __( 'Background image', 'crb' ) ),
+		Field::make( 'text', 'crb_footer_column_1_title', __( 'Column One Title', 'crb' ) ),
+		Field::make( 'text', 'crb_footer_column_2_title', __( 'Column Two Title', 'crb' ) ),
+		Field::make( 'text', 'crb_footer_column_3_title', __( 'Column Three Title', 'crb' ) ),
+		Field::make( 'text', 'crb_footer_column_4_title', __( 'Column Four Title', 'crb' ) ),
 		Field::make( 'rich_text', 'crb_footer_copyright', __( 'Copyright', 'crb' ) )
 			->set_settings( array(
 				'media_buttons' => false,
