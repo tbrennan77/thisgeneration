@@ -67,16 +67,15 @@
 				<?php if ( ! empty( $footer_copyright ) || has_nav_menu( 'footer-bottom-location' ) ) : ?>
 					<div class="footer__bar">
 						<div class="shell">
-							<ul>
-								<?php if ( ! empty( $footer_copyright ) ) : ?>
-									<li>
-										<?php
-											echo $footer_copyright;
-										?>
-									</li>
+							<?php if ( ! empty( $footer_copyright ) ) : ?>
+								<div class="copyright">
+									<?php
+										echo $footer_copyright;
+									?>
+								</div>
 								<?php endif; ?>
-
 								<?php if ( has_nav_menu( 'footer-bottom-location' ) ) : ?>
+									<ul>
 									<?php
 										wp_nav_menu( array(
 											'container' => '',
@@ -84,8 +83,8 @@
 											'theme_location' => 'footer-bottom-location'
 										) );
 									?>
+									</ul>
 								<?php endif; ?>
-							</ul>
 						</div><!-- /.shell -->
 					</div><!-- /.footer__bar -->
 				<?php endif; ?>
