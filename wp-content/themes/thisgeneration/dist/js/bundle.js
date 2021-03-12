@@ -87,9 +87,9 @@
 /******/ ({
 
 /***/ "../../node_modules/magnific-popup/dist/jquery.magnific-popup.js":
-/*!********************************************************************************************************************!*\
-  !*** /Users/tbrennan/websites/cmi/wp-content/themes/cmi/node_modules/magnific-popup/dist/jquery.magnific-popup.js ***!
-  \********************************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** /Users/tbrennan/websites/cmi/wp-content/themes/thisgeneration/node_modules/magnific-popup/dist/jquery.magnific-popup.js ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1954,9 +1954,9 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /***/ }),
 
 /***/ "../../node_modules/slick-carousel/slick/slick.js":
-/*!*****************************************************************************************************!*\
-  !*** /Users/tbrennan/websites/cmi/wp-content/themes/cmi/node_modules/slick-carousel/slick/slick.js ***!
-  \*****************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** /Users/tbrennan/websites/cmi/wp-content/themes/thisgeneration/node_modules/slick-carousel/slick/slick.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -25,6 +25,11 @@ TODO: add details here on `Git` and collaborating...
 
 This theme is built around the amazing [Carbon Field](https://carbonfields.net/) library from our friends and project partners at [htmlBurger](https://htmlburger.com/). Carbon Fields is much more developer-centric than Advanced Custom Fields (ACF) or similar custom fields libraries that may exist. With Carbon Fields the custom fields are defined via PHP and not an admin UI. So while there may be less control over the general setup there is much more flexibility and customizations than is possible with ACF. Additionally changes are part of the Git history. Below are some of the initial custom fields that are built into this project:
 
+## Logos
+
+The logos can be updated directory by replacing these two files:
+1. Header logo - `/wp-content/themes/thisgeneration/resources/images/logo.png`
+2. Footer logo - `/wp-content/themes/thisgeneration/resources/images/logo-circle.png`
 
 ## Header
 
