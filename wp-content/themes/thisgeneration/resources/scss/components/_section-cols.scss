@@ -107,7 +107,7 @@
 
 	.section__actions ul li {
 		padding: 10px 15px;
-		width: 50%;
+		//width: 50%;
 
 		@include breakpoint-down(mobile-medium) {
 			width: 100%;

@@ -17,8 +17,9 @@ $shell-gutter               : 15px;
 $c-black                    : #000;
 $c-white                    : #fff;
 $c-base                     : #373a3e;
-$c-blue                     : #57a3d9;
+$c-blue                     : #3b5963;
 $c-blue-2                   : #cbe2f3;
+$c-lt-blue                  : #008aff;
 $c-dark-blue                : #0069bc;
 $c-yellow                   : #e59436;
 $c-gray 	                : #71716c;
@@ -26,7 +27,8 @@ $c-dark-gray 	            : #3c4044;
 $c-light-gray 	            : #dfdfd7;
 $c-pink	 	            	: #d83361;
 
-$responsive-ios             : 812px;
+$responsive-ios             : 992px;
+//$responsive-ios             : 812px;
 
 $breakpoints: (
 	mobile-small: 374px,
