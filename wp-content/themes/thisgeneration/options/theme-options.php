@@ -8,6 +8,8 @@ Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
 	->add_tab( __( 'Header', 'crb' ), array(
 		Field::make( 'text', 'crb_header_button_link', __( 'Button link', 'crb' ) ),
 		Field::make( 'text', 'crb_header_button_text', __( 'Button text', 'crb' ) ),
+		Field::make( 'text', 'crb_header_button_link_2', __( 'Button link 2', 'crb' ) ),
+		Field::make( 'text', 'crb_header_button_text_2', __( 'Button text 2', 'crb' ) ),
 	) )
 	->add_tab( __( 'Footer', 'crb' ), array(
 		Field::make( 'image', 'crb_footer_background_image', __( 'Background image', 'crb' ) ),

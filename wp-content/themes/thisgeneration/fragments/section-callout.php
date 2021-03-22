@@ -11,18 +11,13 @@
 <?php if ( ! empty( $section['title'] ) || ! empty( $section['text'] ) || ! empty( $section['form'] ) ) : ?>
 	<section class="section-callout <?php echo esc_attr( $section_alt ); ?>">
 		<div class="shell">
-			<?php if ( ! empty( $section['title'] ) ) : ?>
-				<header class="section__head">
-					<h1>
-						<?php
-							echo esc_html( $section['title'] );
-						?>
-					</h1>
-				</header><!-- /.section__head -->
-			<?php endif; ?>
-
 			<?php if ( ! empty( $section['text'] ) ) : ?>
 				<div class="section__entry">
+					<?php if ( ! empty( $section['title'] ) ) : ?>
+						<h1><?php
+							echo esc_html( $section['title'] );
+						?></h1>
+					<?php endif; ?>
 					<p>
 						<?php
 							echo nl2br( esc_html( $section['text'] ) );

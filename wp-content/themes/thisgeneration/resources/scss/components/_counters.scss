@@ -122,11 +122,28 @@
 		color: $c-dark-gray;
 
 		@include breakpoint-down(mobile) {
-			font-size: 32px;
+			//font-size: 32px;
 		}
 
 		@include breakpoint-down(mobile-medium) {
-			font-size: 28px;
+			//font-size: 28px;
+		}
+	}
+
+	.counter__description {
+		font-size: $font-size-base;
+		text-transform: none;
+	    font-weight: normal;
+	    padding: 20px 10px;
+		color: $c-dark-gray;
+		line-height: 1.3;
+
+		@include breakpoint-down(mobile) {
+			//font-size: 32px;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			//font-size: 28px;
 		}
 	}
 }

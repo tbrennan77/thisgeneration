@@ -44,6 +44,14 @@
 															?>
 														</h3><!-- /.counter__title -->
 													<?php endif; ?>
+
+													<?php if ( ! empty( $item['description'] ) ) : ?>
+														<p class="counter__description">
+															<?php
+																echo esc_html( $item['description'] );
+															?>
+														</p><!-- /.counter__title -->
+													<?php endif; ?>
 												</div><!-- /.counter__inner -->
 											<?php endif; ?>
 										</div><!-- /.counter -->
@@ -53,7 +61,13 @@
 						</ul>
 					</div><!-- /.counters -->
 				</div><!-- /.shell -->
+				<?php if ( ! empty( $section['button_link'] ) ) : ?>
+				<div class="shell">
+					<a href="<?php echo esc_html( $section['button_link'] ); ?>" class="btn btn--block btn--ghost"><?php echo esc_html( $section['button_text'] ); ?></a>
+				</div><!-- /.shell -->
+				<?php endif; ?>
 			</div><!-- /.section__body -->
 		<?php endif; ?>
+
 	</section><!-- /.section-counters -->
 <?php endif; ?>

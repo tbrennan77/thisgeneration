@@ -92,10 +92,11 @@
 			width: calc(100% + 50px);
 			padding-bottom: calc(100% + 50px);
 			transform: translate(-50%, -50%);
-			border-radius: 50%;
+			border-radius: 5px;
 			background: $c-blue-2;
 			z-index: -1;
-			box-shadow: 0 13px 43px rgba(33, 30, 30, 0.19)
+			box-shadow: 0 5px 13px rgba(33, 30, 30, 0.19);
+			display: none;
 		}
 	}
 
@@ -185,7 +186,7 @@
 	.section__image {
 
 		&:after {
-			background: #44494d;
+			background: $c-light-gray;
 		}
 	}
 }

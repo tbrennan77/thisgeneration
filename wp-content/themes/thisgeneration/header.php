@@ -45,7 +45,11 @@
 							$header_button_link = carbon_get_theme_option( 'crb_header_button_link' );
 							$header_button_text = carbon_get_theme_option( 'crb_header_button_text' );
 
+							$header_button_link_2 = carbon_get_theme_option( 'crb_header_button_link_2' );
+							$header_button_text_2 = carbon_get_theme_option( 'crb_header_button_text_2' );
+
 							$has_button = ! empty( $header_button_link ) && ! empty( $header_button_text );
+							$has_button_2 = ! empty( $header_button_link_2 ) && ! empty( $header_button_text_2 );
 						?>
 
 						<?php if ( has_nav_menu( 'header-location' ) || $has_button ) : ?>
@@ -66,6 +70,16 @@
 											<a href="<?php echo esc_url( $header_button_link ); ?>">
 												<?php
 													echo esc_html( $header_button_text );
+												?>
+											</a>
+										</li>
+									<?php endif; ?>
+
+									<?php if ( $has_button_2 ) : ?>
+										<li class="nav__btn ghost">
+											<a href="<?php echo esc_url( $header_button_link_2 ); ?>" class="btn--ghost">
+												<?php
+													echo esc_html( $header_button_text_2 );
 												?>
 											</a>
 										</li>

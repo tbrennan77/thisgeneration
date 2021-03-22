@@ -99,6 +99,31 @@
 		}
 	}
 
+	> ul > li.nav__btn.ghost a {
+		display: inline-block;
+		text-decoration: none;
+		padding: .75rem 1.75rem;
+		border: 1px solid transparent;
+		border-radius: .375rem;
+		background: $c-white;
+		color: $c-dark-gray;
+		 border: 1px solid $c-light-gray;
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+			max-width: 220px;
+		}
+
+		&:before {
+			content: none;
+		}
+
+		&:hover a {
+			background: $c-light-gray;
+			color: $c-black;
+		}
+	}
+
 	> ul > li + li {
 		margin-left: 15px;
 

@@ -123,6 +123,8 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 			) )
 			->add_fields( 'counters', array(
 				Field::make( 'text', 'title', __( 'Title', 'crb' ) ),
+				Field::make( 'text', 'button_link', __( 'Button Link', 'crb' ) ),
+				Field::make( 'text', 'button_text', __( 'Button Text', 'crb' ) ),
 				Field::make( 'complex', 'items_counters', __( 'Items - counters', 'crb' ) )
 					->set_layout( 'tabbed-horizontal' )
 					->setup_labels( array(
@@ -133,7 +135,8 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 						Field::make( 'image', 'image', __( 'Image', 'crb' ) )
 							->set_required( true ),
 						Field::make( 'text', 'number', __( 'Number', 'crb' ) ),
-						Field::make( 'text', 'title', __( 'Title', 'crb' ) )
+						Field::make( 'text', 'title', __( 'Title', 'crb' ) ),
+						Field::make( 'text', 'description', __( 'Description', 'crb' ) )
 					) )
 			) )
 			->add_fields( 'callout', array(

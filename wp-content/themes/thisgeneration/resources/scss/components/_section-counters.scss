@@ -4,6 +4,7 @@
 
 .section-counters {
 	margin-top: 30px;
+	border-bottom: 1px solid $c-light-gray;
 
 	.section__head {
 		margin-bottom: 14px;
@@ -23,4 +24,9 @@
 			padding: 55px 0 65px;
 		}
 	}
+
+	.btn {
+		max-width: 200px;
+		margin: 0 auto;
+	} 
 }
