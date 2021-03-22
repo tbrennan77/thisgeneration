@@ -5079,7 +5079,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
 .footer .footer__body {
     position: relative;
     padding: 140px 0 63px;
-    border: solid #71716c;
+    border: solid #dfdfd7;
     border-width: 1px 0 0px 0;
     background-color: #fff;
     text-align: center; }
