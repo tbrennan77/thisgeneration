@@ -35,11 +35,15 @@
 												?>
 											</h1>
 										<?php endif; ?>
-
+										<p>
 										<?php if ( ! empty( $item['text'] ) ) : ?>
 											<?php
 												echo apply_filters( 'the_content', $item['text'] );
 											?>
+										<?php endif; ?>
+										</p>
+										<?php if ( ! empty( $item['button_link'] ) ) : ?>
+											<a href="<?php echo esc_html( $item['button_link'] ); ?>" class="btn btn--block btn--ghost"><?php echo esc_html( $item['button_text'] ); ?></a>
 										<?php endif; ?>
 									</li>
 								<?php endif; ?>

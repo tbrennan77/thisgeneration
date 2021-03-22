@@ -283,7 +283,9 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 									'toolbar2' => false,
 								),
 								'quicktags' => false
-							) )
+							) ),
+							Field::make( 'text', 'button_link', __( 'Button link', 'crb' ) ),
+							Field::make( 'text', 'button_text', __( 'Button text', 'crb' ) )
 					) )
 			) )
 			->add_fields( 'text-and-image-type-2', array(
