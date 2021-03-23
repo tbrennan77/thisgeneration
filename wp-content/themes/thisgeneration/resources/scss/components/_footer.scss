@@ -146,7 +146,7 @@
 		text-transform: lowercase;
 
 		&:hover {
-			color: $c-white;
+			color: $c-gray;
 		}
 
 		&:after {
@@ -157,7 +157,7 @@
 			left: 0;
 			width: 100%;
 			height: 0;
-			background: $c-pink;
+			background: $c-light-gray;
 			transition: height $t-duration;
 		}
 	}
