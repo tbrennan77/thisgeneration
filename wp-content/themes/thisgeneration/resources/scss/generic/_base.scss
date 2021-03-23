@@ -44,11 +44,13 @@ h6 {
 	font-family: $ff-sans-serif-2;
 	font-weight: 900;
 	line-height: 1;
+
 }
 
 .h1,
 h1 {
 	font-size: 45px;
+	text-transform: capitalize;
 
 	@include breakpoint-down(mobile) {
 		font-size: 36px;
