@@ -22,7 +22,7 @@
 		display: block;
 		width: 61px;
 		height: 61px;
-		border: 5px solid $c-white;
+		border: 2px solid $c-white;
 		border-radius: 50%;
 		color: $c-white;
 		transition: border $t-duration, color $t-duration;
@@ -103,11 +103,11 @@
 /*socials--gray*/
 .socials--dark-gray {
 	ul li a {
-		border-color: $c-dark-gray;
-		color: $c-dark-gray;
+		border-color: $c-light-gray;
+		color: $c-light-gray;
 
 		&:hover {
-			color: $c-dark-blue;
+			color: $c-dark-gray;
 		}
 	}
 }
