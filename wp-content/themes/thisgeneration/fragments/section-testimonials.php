@@ -71,11 +71,11 @@
 												<?php endif; ?>
 
 												<?php if ( ! empty( $item['name'] ) ) : ?>
-													<h1>
+													<h5>
 														<?php
-															echo esc_html( '-' . $item['name'] . '-' );
+															echo esc_html($item['name']);
 														?>
-													</h1>
+													</h5>
 												<?php endif; ?>
 
 												<?php if ( ! empty( $item['review_via_text'] ) ) : ?>

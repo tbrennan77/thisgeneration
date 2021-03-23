@@ -3,7 +3,8 @@
 \* ------------------------------------------------------------ */
 
 .section-testimonials {
-	background-color: $c-dark-gray;
+	background-color: $c-white;
+	border-bottom: 1px solid $c-light-gray;
 
 	.section__inner {
 		display: flex;

@@ -5422,7 +5422,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
 	List Prices
 \* ------------------------------------------------------------ */
 .list-prices {
-  font-size: 25px;
+  font-size: 16px;
   line-height: 1.2;
   text-align: center; }
 .list-prices > ul {
@@ -5445,6 +5445,14 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
 .list-prices > ul > li h1 {
     margin-bottom: 15px;
     color: #3b5963; }
+.list-prices p {
+    min-height: 100px;
+    padding: 20px;
+    line-height: 1.62; }
+.list-prices .btn {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
 /* ------------------------------------------------------------ *\
 	Logo
 \* ------------------------------------------------------------ */
@@ -6589,37 +6597,31 @@ body .nav ul li:hover > ul {
 	Section Ppricing
 \* ------------------------------------------------------------ */
 .section-pricing {
-  margin: 65px 0; }
+  margin: 100px 0; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-pricing {
-      margin: 45px 0; } }
-@media (max-width: 575px) {
-    .section-pricing {
-      margin: 30px 0; } }
+      margin: 65px 0; } }
 .section-pricing .section__head {
     position: relative;
     z-index: 10;
     padding: 50px 0 40px;
     margin-bottom: 25px;
     text-align: center;
-    font-size: 25px; }
+    font-size: 20px; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
       .section-pricing .section__head {
         padding: 25px 0 25px;
-        font-size: 22px; } }
-@media (max-width: 575px) {
-      .section-pricing .section__head {
-        font-size: 20px; } }
+        font-size: 16px; } }
 .section-pricing .section__head:after {
       content: '';
       position: absolute;
       left: 50%;
       bottom: 0;
-      background-color: #f2f2f2;
+      background-color: #dfdfd7;
       -webkit-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
               transform: translateX(-50%);
-      height: 5px;
+      height: 1px;
       width: 59%;
       max-width: 100%; }
 .section-pricing .section__head:before {
@@ -6630,7 +6632,6 @@ body .nav ul li:hover > ul {
       z-index: -1;
       width: 97px;
       height: 168px;
-      background: url(../images/ico/ico-dollar.png) no-repeat center/cover;
       background-size: cover; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
         .section-pricing .section__head:before {
@@ -6638,9 +6639,14 @@ body .nav ul li:hover > ul {
           height: 118px;
           left: 0; } }
 .section-pricing .section__head h1 {
-    margin-bottom: 0; }
+    font-size: 3rem;
+    color: #3c4044;
+    font-weight: 700;
+    font-family: "Avenir Next", Arial, sans-serif;
+    line-height: 1.3;
+    margin-bottom: 1rem; }
 .section-pricing .section__head p {
-    text-transform: uppercase; }
+    text-transform: none; }
 /* ------------------------------------------------------------ *\
 	Section Questions
 \* ------------------------------------------------------------ */
@@ -6765,7 +6771,8 @@ body .nav ul li:hover > ul {
 	Section Testimonials
 \* ------------------------------------------------------------ */
 .section-testimonials {
-  background-color: #3c4044; }
+  background-color: #fff;
+  border-bottom: 1px solid #dfdfd7; }
 .section-testimonials .section__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6962,7 +6969,7 @@ body .nav ul li:hover > ul {
 \* ------------------------------------------------------------ */
 .slider-testimonial {
   max-width: 758px;
-  padding: 118px 0 0;
+  padding: 118px 0 100px;
   margin-left: auto;
   position: relative;
   z-index: 55; }
@@ -7083,9 +7090,9 @@ body .nav ul li:hover > ul {
 \* ------------------------------------------------------------ */
 .testimonial blockquote {
   position: relative;
-  font-size: 25px;
-  line-height: 1.6;
-  margin-bottom: 89px;
+  font-size: 16px;
+  line-height: 1.62;
+  margin-bottom: 30px;
   padding-top: 50px;
   padding-left: 30px; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
@@ -7102,14 +7109,16 @@ body .nav ul li:hover > ul {
       font-size: 18px;
       margin-bottom: 25px; } }
 .testimonial blockquote:before {
-    content: '';
+    content: '"';
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
     z-index: -1;
-    width: 117px;
-    height: 89px;
-    background: #fff url(../images/ico/ico-quote.png) no-repeat center;
+    width: 60px;
+    height: 40px;
+    font-size: 60px;
+    color: #dfdfd7;
+    font-weight: 700;
     background-size: cover;
     background-color: transparent; }
 @media (max-width: 575px) {
@@ -7166,6 +7175,14 @@ body .nav ul li:hover > ul {
   left: 5px;
   width: 123px;
   height: 123px; }
+.testimonial h5 {
+  padding-left: 30px;
+  font-weight: bold;
+  line-height: 1.62;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+.testimonial p {
+  padding-left: 30px; }
 /* ------------------------------------------------------------ *\
 	WooCommerce and LearnDash
 \* ------------------------------------------------------------ */

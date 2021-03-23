@@ -3,7 +3,7 @@
 \* ------------------------------------------------------------ */
 
 .list-prices {
-	font-size: 25px;
+	font-size: $font-size-base;
 	line-height: 1.2;
 	text-align: center;
 
@@ -30,5 +30,17 @@
 	> ul > li h1 {
 		margin-bottom: 15px;
 		color: $c-blue;
+	}
+
+	p {
+		min-height: 100px;
+		padding: 20px;
+		line-height: 1.62;
+	}
+
+	.btn {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
 	}
 }
