@@ -88,21 +88,23 @@
 	}
 
 	.counter__image {
-		height: 178px;
+		height: 108px;
 		margin-bottom: 12px;
 	}
 
 	.counter__image img {
 		max-height: 100%;
+		width: 24px;
+		height: 24px;
 	}
 
 	.counter__number {
 		color: $c-dark-gray;
 	    text-transform: none;
 	    font-weight: bold;
-	    padding: 10px 20px;
+	    padding: 10px 0px;
 	    font-size: 28px;
-		margin-top: 1.5rem;
+		//margin-top: 1.5rem;
 
 		@include breakpoint-down(mobile) {
 			//font-size: 24px;
@@ -114,11 +116,10 @@
 	}
 
 	.counter__title {
-		font-size: 24px;
-		    text-transform: none;
+		text-transform: none;
 	    font-weight: bold;
 	    padding: 0px;
-	    font-size: 28px;
+	    font-size: 18px;
 		color: $c-dark-gray;
 
 		@include breakpoint-down(mobile) {
@@ -169,11 +170,13 @@
 	.counter__image {
 		margin-bottom: 0;
 		/*margin-top: 13px;*/
+		padding-top: 30px;
 	}
 
 	.counter__number {
-		font-size: 45px;
+		font-size: 28px;
 		line-height: inherit;
+		color: $c-light-gray;
 	}
 
 	.counter__title {

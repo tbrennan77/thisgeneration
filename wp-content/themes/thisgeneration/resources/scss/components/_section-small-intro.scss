@@ -4,7 +4,7 @@
 
 .section-small-intro {
 	padding: 103px 0 95px;
-	background-color: $c-dark-blue;
+	background-color: $c-dark-gray;
 	color: $c-white;
 	text-transform: uppercase;
 	text-align: center;
@@ -17,6 +17,8 @@
 		padding: 0 230px;
 		font-size: 50px;
 		margin-bottom: 0;
+		font-weight: 700;
+		font-family: $ff-sans-serif;
 
 		@include breakpoint-down(mobile) {
 			padding: 0;
@@ -31,7 +33,8 @@
 
 	.socials {
 		position: absolute;
-		top: 50%;
+		display: none;
+		top: 80%;
 		right: 10px;
 		transform: translateY(-50%);
 

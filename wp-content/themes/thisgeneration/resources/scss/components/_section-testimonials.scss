@@ -12,11 +12,18 @@
 		@include breakpoint-down(mobile) {
 			display: block;
 		}
+
+		/* &:before {
+			content: '';
+			@include over;
+			background-color: $c-near-white;
+		} */
 	}
 
 	.section__aside {
 		width: 38.7%;
 		padding: 112px 15px 130px 0;
+		background-color: $c-white;
 
 		@include breakpoint-down(mobile) {
 			width: 100%;
