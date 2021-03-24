@@ -5,8 +5,8 @@
 .section-features {
 	.section__head {
 		position: relative;
-		padding: 30px 0 48px;
-		background-color: $c-blue;
+		padding: 48px 0 48px;
+		background-color: $c-light-gray;
 		text-align: center;
 
 		@include breakpoint-down(mobile) {
@@ -23,7 +23,7 @@
 			height: 0;
 			border-style: solid;
 			border-width: 30px 43px 0 43px;
-			border-color: #57a3d9 transparent transparent transparent;
+			border-color: $c-light-gray transparent transparent transparent;
 		}
 	}
 
@@ -37,9 +37,10 @@
 	}
 
 	.section__body {
-		background: #44494d;
-		padding: 70px 0 105px;
-		color: $c-white;
+		background: $c-near-white;
+		padding: 70px 0 70px;
+		color: $c-gray;
+		border-bottom: 1px solid $c-light-gray;
 
 		@include breakpoint-down(mobile) {
 			padding: 45px 0 65px;

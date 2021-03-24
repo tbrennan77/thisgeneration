@@ -3,10 +3,13 @@
 \* ------------------------------------------------------------ */
 
 .section-pricing {
-	margin: 100px 0;
+	margin: 0px 0;
+	padding-bottom: 100px;
+	padding-top: 50px;
+	border-bottom: 1px solid $c-light-gray;
 
 	@include breakpoint-down(mobile) {
-		margin: 65px 0;
+		margin: 25px 0;
 	}
 
 	@include breakpoint-down(mobile-medium) {

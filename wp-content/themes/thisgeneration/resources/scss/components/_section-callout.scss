@@ -9,7 +9,7 @@
 	background: $c-white;
 	color: $c-gray;
 	text-align: center;
-	border-top: 1px solid $c-light-gray;
+	//border-top: 1px solid $c-light-gray;
 	line-height: 1.62;
 
 	@include breakpoint-down(mobile) {

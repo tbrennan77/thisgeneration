@@ -35,56 +35,59 @@ readers do not read off random characters that represent icons
     20. Btn Play ----------------------------------
     21. Btn ---------------------------------------
          Btn Block --------------------------------
-    22. Counters ----------------------------------
-    23. Counter -----------------------------------
-    24. Footer ------------------------------------
-    25. Grid --------------------------------------
-    26. Header ------------------------------------
-    27. Admin Bar (if header is fixed) ------------
-    28. Icons -------------------------------------
-    29. Image Fit ---------------------------------
-    30. List Features -----------------------------
-    31. List Prices -------------------------------
-    32. Logo --------------------------------------
-    33. Main --------------------------------------
-    34. Nav trigger -------------------------------
-    35. Nav ---------------------------------------
-    36. Questions ---------------------------------
-    37. Question ----------------------------------
-    38. Richtext Entry ----------------------------
-    39. Section About -----------------------------
-    40. Section Blog ------------------------------
-    41. Section Callout ---------------------------
-    42. Section Cols ------------------------------
-    43. Section Counters --------------------------
-    44. Section Default ---------------------------
+    22. Columns -----------------------------------
+    23. Column ------------------------------------
+         Column Has Image -------------------------
+    24. Counters ----------------------------------
+    25. Counter -----------------------------------
+    26. Footer ------------------------------------
+    27. Grid --------------------------------------
+    28. Header ------------------------------------
+    29. Admin Bar (if header is fixed) ------------
+    30. Icons -------------------------------------
+    31. Image Fit ---------------------------------
+    32. List Features -----------------------------
+    33. List Prices -------------------------------
+    34. Logo --------------------------------------
+    35. Main --------------------------------------
+    36. Nav trigger -------------------------------
+    37. Nav ---------------------------------------
+    38. Questions ---------------------------------
+    39. Question ----------------------------------
+    40. Richtext Entry ----------------------------
+    41. Section About -----------------------------
+    42. Section Blog ------------------------------
+    43. Section Callout ---------------------------
+    44. Section Cols ------------------------------
+    45. Section Counters --------------------------
+    46. Section Default ---------------------------
          Section Default 404 ----------------------
-    45. Section Features --------------------------
-    46. Section Houses ----------------------------
-    47. Section Intro Blog ------------------------
-    48. Section Intro -----------------------------
-    49. Section Ppricing --------------------------
-    50. Section Questions -------------------------
-    51. Section Small Intro -----------------------
-    52. section-story -----------------------------
-    53. Section Testimonials ----------------------
-    54. Section Text With Image -------------------
-    55. Section Text ------------------------------
-    56. Shell -------------------------------------
+    47. Section Features --------------------------
+    48. Section Houses ----------------------------
+    49. Section Intro Blog ------------------------
+    50. Section Intro -----------------------------
+    51. Section Ppricing --------------------------
+    52. Section Questions -------------------------
+    53. Section Small Intro -----------------------
+    54. section-story -----------------------------
+    55. Section Testimonials ----------------------
+    56. Section Text With Image -------------------
+    57. Section Text ------------------------------
+    58. Shell -------------------------------------
          Shell Fluid ------------------------------
-    57. Slider Houses -----------------------------
-    58. Slider Testimonial ------------------------
-    59. Socials -----------------------------------
-    60. Testimonial -------------------------------
-    61. WooCommerce and LearnDash -----------------
-    62. WooCommerce -------------------------------
+    59. Slider Houses -----------------------------
+    60. Slider Testimonial ------------------------
+    61. Socials -----------------------------------
+    62. Testimonial -------------------------------
+    63. WooCommerce and LearnDash -----------------
+    64. WooCommerce -------------------------------
          Hide the additional information tab ------
-    63. Wrapper -----------------------------------
-    64. Writer ------------------------------------
-    65. Overwrites --------------------------------
-    66. Gravity Forms Reset -----------------------
+    65. Wrapper -----------------------------------
+    66. Writer ------------------------------------
+    67. Overwrites --------------------------------
+    68. Gravity Forms Reset -----------------------
          Gform Reset ------------------------------
-    67. Gravity Forms Deafult Style ---------------
+    69. Gravity Forms Deafult Style ---------------
          Base -------------------------------------
          Fields -----------------------------------
          Checkbox and Radio -----------------------
@@ -94,9 +97,9 @@ readers do not read off random characters that represent icons
          Error States -----------------------------
          Confirmation -----------------------------
          Form Horizontal --------------------------
-    68. WP Gutenberg ------------------------------
-    69. Slick Styles ------------------------------
-    70. Custom Blocks -----------------------------
+    70. WP Gutenberg ------------------------------
+    71. Slick Styles ------------------------------
+    72. Custom Blocks -----------------------------
  */
 
 @import url("https://use.typekit.net/sog3nwl.css");
@@ -3888,7 +3891,8 @@ h6 {
   line-height: 1; }
 .h1,
 h1 {
-  font-size: 45px; }
+  font-size: 45px;
+  text-transform: capitalize; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .h1,
     h1 {
@@ -4510,8 +4514,13 @@ blockquote:last-child {
 .article-single .article__head:last-child {
     margin-bottom: 0; }
 .article-single .article__head h1 {
-  font-size: 50px;
-  line-height: 1.2; }
+  font-size: 3rem;
+  color: #3c4044;
+  font-weight: 700;
+  font-family: "Avenir Next", Arial, sans-serif;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  padding-top: 50px; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .article-single .article__head h1 {
       font-size: 38px; } }
@@ -4580,8 +4589,8 @@ blockquote:last-child {
 .article-single .article__inner {
   margin-bottom: 15px;
   padding: 53px 137px 89px 151px;
-  border: 5px solid #71716c;
-  border-radius: 25px; }
+  border: 0px solid #dfdfd7;
+  border-radius: 5px; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .article-single .article__inner {
       padding: 35px 25px; } }
@@ -4945,6 +4954,60 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
   opacity: 0.5;
   text-decoration: none; }
 /* ------------------------------------------------------------ *\
+	Columns
+\* ------------------------------------------------------------ */
+.columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%; }
+.columns h2 {
+    font-weight: 700;
+    font-size: 1rem; }
+.columns .column {
+  width: 50%; }
+@media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
+    .columns .column .columns .column {
+      width: 100%; }
+    .columns .column .column {
+      padding: 50px 20px; } }
+/* ------------------------------------------------------------ *\
+	Column
+\* ------------------------------------------------------------ */
+.column {
+  min-height: 300px;
+  padding: 75px 5%; }
+.column .column__head {
+  position: relative;
+  padding-bottom: 33px;
+  margin-bottom: 31px; }
+.column .column__head:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  width: 30%;
+  height: 1px;
+  background: #dfdfd7; }
+/* Column Has Image */
+.column--has-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff; }
+.column--has-image h2 {
+  color: #fff; }
+.column--has-image .column__head:after {
+  background: #e59436; }
+/* ------------------------------------------------------------ *\
 	Counters
 \* ------------------------------------------------------------ */
 .counters > ul {
@@ -5180,7 +5243,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
     font-size: 15px;
     text-transform: lowercase; }
 .footer .footer__nav li a:hover {
-      color: #fff; }
+      color: #71716c; }
 .footer .footer__nav li a:after {
       content: '';
       position: absolute;
@@ -5189,7 +5252,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
       left: 0;
       width: 100%;
       height: 0;
-      background: #d83361;
+      background: #dfdfd7;
       -webkit-transition: height 0.4s;
       -o-transition: height 0.4s;
       transition: height 0.4s; }
@@ -5354,10 +5417,9 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
 	List Features
 \* ------------------------------------------------------------ */
 .list-features {
-  font-size: 25px;
+  font-size: 16px;
   line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: center; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .list-features {
       font-size: 23px; } }
@@ -5602,7 +5664,7 @@ body.has-menu-opened .nav-trigger span:nth-child(3) {
       z-index: -1;
       width: 100%;
       height: 0;
-      background: #3b5963;
+      background: #dfdfd7;
       -webkit-transition: height 0.4s;
       -o-transition: height 0.4s;
       transition: height 0.4s; }
@@ -6025,7 +6087,6 @@ body .nav ul li:hover > ul {
   background: #fff;
   color: #71716c;
   text-align: center;
-  border-top: 1px solid #dfdfd7;
   line-height: 1.62; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-callout {
@@ -6298,8 +6359,8 @@ body .nav ul li:hover > ul {
 \* ------------------------------------------------------------ */
 .section-features .section__head {
   position: relative;
-  padding: 30px 0 48px;
-  background-color: #3b5963;
+  padding: 48px 0 48px;
+  background-color: #dfdfd7;
   text-align: center; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-features .section__head {
@@ -6314,16 +6375,17 @@ body .nav ul li:hover > ul {
     height: 0;
     border-style: solid;
     border-width: 30px 43px 0 43px;
-    border-color: #57a3d9 transparent transparent transparent; }
+    border-color: #dfdfd7 transparent transparent transparent; }
 .section-features .section__head h1 {
   line-height: 1.2; }
 .section-features .section__head span {
   color: #fff;
   display: block; }
 .section-features .section__body {
-  background: #44494d;
-  padding: 70px 0 105px;
-  color: #fff; }
+  background: #f5f5f5;
+  padding: 70px 0 70px;
+  color: #71716c;
+  border-bottom: 1px solid #dfdfd7; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-features .section__body {
       padding: 45px 0 65px; } }
@@ -6597,10 +6659,13 @@ body .nav ul li:hover > ul {
 	Section Ppricing
 \* ------------------------------------------------------------ */
 .section-pricing {
-  margin: 100px 0; }
+  margin: 0px 0;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  border-bottom: 1px solid #dfdfd7; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-pricing {
-      margin: 65px 0; } }
+      margin: 25px 0; } }
 .section-pricing .section__head {
     position: relative;
     z-index: 10;
@@ -6881,12 +6946,21 @@ body .nav ul li:hover > ul {
   position: relative;
   z-index: 15;
   margin: 85px 0 50px;
-  text-align: center; }
+  text-align: center;
+  border-bottom: 1px solid #dfdfd7;
+  padding-bottom: 50px; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-text {
       margin: 45px 0 50px; } }
+.section-text h1 {
+    text-transform: capitalize; }
 .section-text .section__head {
-    text-transform: uppercase; }
+    font-size: 3rem;
+    color: #3c4044;
+    font-weight: 700;
+    font-family: "Avenir Next", Arial, sans-serif;
+    line-height: 1.3;
+    margin-bottom: 1rem; }
 .section-text .section__head span {
     color: #3c4044;
     text-transform: none;
@@ -7008,7 +7082,7 @@ body .nav ul li:hover > ul {
     display: block;
     width: 61px;
     height: 61px;
-    border: 5px solid #fff;
+    border: 2px solid #fff;
     border-radius: 50%;
     color: #fff;
     -webkit-transition: border 0.4s, color 0.4s;
@@ -7055,10 +7129,10 @@ body .nav ul li:hover > ul {
   border-color: #fff; }
 /*socials--gray*/
 .socials--dark-gray ul li a {
-  border-color: #3c4044;
-  color: #3c4044; }
+  border-color: #dfdfd7;
+  color: #dfdfd7; }
 .socials--dark-gray ul li a:hover {
-    color: #0069bc; }
+    color: #3c4044; }
 /*socials--medium*/
 .socials--medium {
   font-size: 24px; }

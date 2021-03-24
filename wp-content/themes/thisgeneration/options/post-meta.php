@@ -333,6 +333,21 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 					) ),
 				Field::make( 'gravity_form', 'form', __( 'Select a Form', 'crb' ) )
 			) )
+			// Columns
+			->add_fields( 'columns', __( 'Columns', 'crb' ), [
+				Field::make( 'complex', 'columns', __( '', 'crb' ) )
+					->set_layout( 'tabbed-horizontal' )
+					->setup_labels( array(
+						'plural_name' => __( 'Columns', 'crb' ),
+						'singular_name' => __( 'Column', 'crb' ),
+					) )
+					->add_fields( [
+						Field::make( 'image', 'image_id', __( 'Background Image', 'crb' ) ),
+						Field::make( 'text', 'title', __( 'Title', 'crb' ) ),
+						Field::make( 'rich_text', 'content', __( 'Content', 'crb' ) ),
+					] )
+					->set_header_template('<%- title %>'),
+			] )
 	) );
 
 Container::make( 'post_meta', __( 'Page footer options', 'crb' ) )

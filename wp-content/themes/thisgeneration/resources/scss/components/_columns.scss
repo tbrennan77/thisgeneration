@@ -1,0 +1,55 @@
+/* ------------------------------------------------------------ *\
+	Columns
+\* ------------------------------------------------------------ */
+
+.columns { 
+	display: flex; 
+	flex-flow: row wrap; 
+	justify-content: space-between; 
+	width: 100%; 
+
+	h2 {
+		font-weight: 700;
+		font-size: 1rem;
+	}
+}
+
+.columns .column { 
+	width: 50%; 
+
+	@include breakpoint-down(mobile) {
+		.columns .column { width: 100%; }
+		.column { padding: 50px 20px; }
+	}
+}
+
+
+/* ------------------------------------------------------------ *\
+	Column
+\* ------------------------------------------------------------ */
+
+.column { min-height: 300px; padding: 75px 5%; }
+
+.column .column__head { 
+	position: relative; 
+	padding-bottom: 33px; 
+	margin-bottom: 31px; 
+}
+.column .column__head:after { 
+	content: ''; position: 
+	absolute; 
+	top: 100%; 
+	left: 0; 
+	display: block; 
+	width: 30%; 
+	height: 1px; 
+	background: $c-light-gray; 
+}
+
+/* Column Has Image */
+.column--has-image { background-repeat: no-repeat; background-position: center; background-size: cover; color: $c-white; }
+.column--has-image h2 { color: $c-white; }
+
+.column--has-image .column__head:after { background: $c-yellow; }
+
+
