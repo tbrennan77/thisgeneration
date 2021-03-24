@@ -5083,8 +5083,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
     margin-bottom: 12px; }
 .counter .counter__image img {
     max-height: 100%;
-    width: 24px;
-    height: 24px; }
+    width: auto; }
 .counter .counter__number {
     color: #3c4044;
     text-transform: none;
@@ -5422,9 +5421,6 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
   font-size: 16px;
   line-height: 1.2;
   text-align: center; }
-@media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
-    .list-features {
-      font-size: 23px; } }
 .list-features > ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7953,9 +7949,7 @@ body.admin-bar .wrapper .wrapper__inner {
 .slick-dots li button {
     width: 20px;
     height: 20px;
-    -webkit-box-shadow: inset 0 3px 5px #4d5357;
-            box-shadow: inset 0 3px 5px #4d5357;
-    background-color: #2584c9;
+    background-color: #71716c;
     opacity: 0.25;
     border: none;
     border-radius: 50%;

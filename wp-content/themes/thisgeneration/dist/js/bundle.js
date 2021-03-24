@@ -2038,7 +2038,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 slidesPerRow: 1,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                speed: 500,
+                speed: 3500,
                 swipe: true,
                 swipeToSlide: false,
                 touchMove: true,
@@ -5048,8 +5048,8 @@ if ($('.js-testimonial-slider').length) {
     slidesToScroll: 1,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 1200,
-    arrows: true,
+    autoplaySpeed: 3600,
+    arrows: false,
     dots: true,
     rows: 0
   });
