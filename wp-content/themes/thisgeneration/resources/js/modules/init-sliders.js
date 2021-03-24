@@ -8,8 +8,8 @@ if ( $('.js-testimonial-slider').length ) {
 		slidesToScroll: 1,
 		fade: true,
 		autoplay: true,
-		autoplaySpeed: 1200,
-		arrows: true,
+		autoplaySpeed: 3600,
+		arrows: false,
 		dots: true,
 		rows: 0,
 	});
