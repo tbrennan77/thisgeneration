@@ -6241,7 +6241,8 @@ body .nav ul li:hover > ul {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     list-style: none;
-    margin: -10px -15px; }
+    margin: -10px -15px;
+    padding: 0 10px; }
 .section-cols .section__actions ul li {
     padding: 10px 5px; }
 @media (max-width: 575px) {
@@ -6314,7 +6315,11 @@ body .nav ul li:hover > ul {
     text-align: center;
     color: #3b5963; }
 .section-counters .section__head h2 {
-    font-size: 40px; }
+    font-size: 40px;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-weight: 700;
+    color: #3c4044;
+    padding: 40px 0; }
 .section-counters .section__body {
     padding: 20px 0 92px;
     background: #fff; }

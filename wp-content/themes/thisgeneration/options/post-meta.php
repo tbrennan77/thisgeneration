@@ -166,7 +166,8 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 						'quicktags' => false
 					) ),
 				Field::make( 'text', 'button_link', __( 'Button link', 'crb' ) ),
-				Field::make( 'text', 'button_text', __( 'Button text', 'crb' ) )
+				Field::make( 'text', 'button_text', __( 'Button text', 'crb' ) ),
+				Field::make( 'checkbox', 'open_in_popup', __( 'Open link in popup', 'crb' ) )
 			) )
 			->add_fields( 'story', array(
 				Field::make( 'image', 'image', __( 'Image', 'crb' ) )
