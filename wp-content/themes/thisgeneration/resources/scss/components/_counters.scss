@@ -120,6 +120,7 @@
 	    padding: 0px;
 	    font-size: 18px;
 		color: $c-dark-gray;
+		line-height: 1.62;
 
 		@include breakpoint-down(mobile) {
 			//font-size: 32px;
@@ -179,6 +180,6 @@
 	}
 
 	.counter__title {
-		line-height: inherit;
+		line-height: 1.62;
 	}
 }

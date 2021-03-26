@@ -21,6 +21,10 @@
 	.shell {
 		padding-left: 0px;
 		padding-right: 0px;
+
+		@include breakpoint-down(mobile) {
+			padding: 0 15px;
+		}
 	}
 }
 

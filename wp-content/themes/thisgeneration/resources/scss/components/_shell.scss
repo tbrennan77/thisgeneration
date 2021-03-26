@@ -8,6 +8,12 @@
 	padding-right: $shell-gutter;
 	margin: auto;
 	width: 100%;
+
+	@include breakpoint-down(mobile) {
+		padding-left: calc( #{$shell-gutter} * 2);
+		padding-right: calc( #{$shell-gutter} * 2);
+	}
+
 }
 
 /* Shell Fluid */
