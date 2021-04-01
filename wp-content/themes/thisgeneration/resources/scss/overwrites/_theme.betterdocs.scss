@@ -11,6 +11,7 @@ a.docs-single-cat-wrap:hover,
   max-width: 1400px;
   display: block;
   margin: 0 auto;
+  background-color: $c-white;
 }
 .betterdocs-search-form-wrap .betterdocs-live-search {
   width: 100%;
@@ -25,7 +26,7 @@ a.docs-single-cat-wrap:hover,
   background-color: #fff;
 }
 .betterdocs-search-form-wrap {
-  background-color: #f7f7f7;
+  background-color: $c-white !important;
   padding: 50px 20px;
   border-bottom: 1px solid #f1f1f1;
 }
@@ -52,7 +53,7 @@ a.docs-single-cat-wrap:hover,
   display: flex;
   align-items: center;
   background: #fff;
-  border: 1px solid #f1f1f1;
+  border: 1px solid $c-light-gray;
   position: relative;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -242,14 +243,14 @@ a.docs-single-cat-wrap:hover,
   width: auto;
 }
 .docs-cat-title-inner {
-  border-bottom: 2px solid #528ffe;
+  border-bottom: 2px solid $c-light-gray;
   padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .docs-cat-title-inner h3 {
-  color: #528ffe;
+  color: $c-light-gray;
   font-size: 20px;
   padding-left: 30px;
   position: relative;
@@ -276,7 +277,7 @@ a.docs-single-cat-wrap:hover,
   height: 30px;
   border-radius: 50%;
   text-align: center;
-  color: #528ffe;
+  color: $c-light-gray;
   font-size: 15px;
   font-weight: bold;
   display: flex;
@@ -309,7 +310,7 @@ a.docs-single-cat-wrap:hover,
 }
 .betterdocs-categories-wrap li a:hover,
 .betterdocs-categories-wrap .docs-sub-cat-title a:hover {
-  color: #528ffe;
+  color: $c-light-gray;
 }
 .docs-item-container {
   padding: 20px;
@@ -357,8 +358,8 @@ a.docs-single-cat-wrap:hover,
 .docs-cat-link-btn {
   display: inline-block;
   font-size: 16px;
-  color: #528ffe;
-  border: 1px solid #528ffe;
+  color: $c-light-gray;
+  border: 1px solid $c-light-gray;
   border-radius: 50px;
   padding: 10px 20px;
   margin: 10px 20px;
@@ -366,7 +367,7 @@ a.docs-single-cat-wrap:hover,
   text-decoration: none;
 }
 .docs-cat-link-btn:hover {
-  background-color: #528ffe;
+  background-color: $c-light-gray;
   color: #fff;
 }
 .tax-doc_category .docs-category-listing .docs-cat-title {
@@ -488,7 +489,7 @@ a.docs-single-cat-wrap:hover,
   text-decoration: none;
 }
 .docs-category-listing .docs-list ul li a:hover {
-  color: #528ffe;
+  color: $c-light-gray;
 }
 .betterdocs-single-layout3
   .betterdocs-sidebar-content
@@ -678,7 +679,7 @@ a.close-toc {
   line-height: 1.8;
 }
 .betterdocs-category-box .docs-single-cat-wrap a {
-  color: #528ffe;
+  color: $c-light-gray;
   font-size: 14px;
 }
 .cat-description:empty {
@@ -825,7 +826,7 @@ a.close-toc {
   height: 150px;
 }
 #feedback_form_submit_btn {
-  background-color: #528ffe;
+  background-color: $c-light-gray;
   color: #fff;
   border: none;
   box-shadow: none;
@@ -1133,6 +1134,51 @@ a.close-toc {
 }
 .cat-list-arrow-down {
   display: none;
+}
+
+
+/* Overrides */
+.betterdocs-category-wraper .docs-category-listing .docs-cat-title h3 {
+  color: $c-gray;
+  font-weight: 500;
+  font-family: $ff-serif;
+  padding: 10px 0;
+}
+.docs-single-title .betterdocs-entry-title {
+  color: $c-gray;
+  font-weight: 500;
+  font-family: $ff-serif;
+  text-transform: capitalize;
+}
+.betterdocs-social-share .betterdocs-social-share-heading h5 {
+  color: $c-gray;
+  font-weight: 500;
+  font-family: $ff-serif;
+}
+.betterdocs-content {
+  color: $c-gray;
+  font-family: $ff-serif;
+}
+.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-single-cat-wrap .active-title .docs-cat-title-inner h3, 
+.betterdocs-sidebar-content.betterdocs-category-sidebar .active-title .docs-cat-title-inner h3, .betterdocs-category-wraper .betterdocs-full-sidebar-left .docs-cat-title-wrap::after, 
+.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title-inner h3 {
+  color: $c-gray;
+  font-weight: 500;
+  font-family: $ff-serif;
+}
+.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-item-count, 
+.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-item-count span {
+  background-color: $c-light-gray !important;
+}
+.betterdocs-single-wraper .betterdocs-content-area {
+  background-color: $c-near-white;
+}
+.betterdocs-single-layout1 .betterdocs-sidebar-content .betterdocs-categories-wrap {
+  margin-right: 30px;
+}
+.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-single-cat-wrap .docs-cat-title-wrap.active-title {
+    background-color: rgba(216, 51, 97, .1) !important;
+    border-color: $c-gray !important;
 }
 
 /* Astra Fullwdidth support */
