@@ -12,14 +12,24 @@
 		font-weight: 700;
 		font-size: 1rem;
 	}
+
+	h1 {
+		font-size: 3rem;
+		color: $c-dark-gray;
+		font-weight: 700;
+    	//text-shadow: 0 1px 2px rgb(0 0 0 / 12%), 0 1px 1px rgb(0 0 0 / 24%);
+		font-family: $ff-sans-serif;
+		line-height: 1.15;
+		margin-bottom: 1rem;
+	}
 }
 
 .columns .column { 
 	width: 50%; 
 
-	@include breakpoint-down(mobile) {
-		.columns .column { width: 100%; }
-		.column { padding: 50px 20px; }
+	@include breakpoint-down(mobile-medium) {
+		width: 100%; 
+		padding: 50px 20px; 
 	}
 }
 
