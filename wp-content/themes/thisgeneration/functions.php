@@ -278,3 +278,10 @@ function woo_change_order_received_text( $str, $order ) {
     $new_str = $str . ' <a href="https://gregslaughter.com/courses/self-managing-your-rentals/">Click here to access your course and get started</a>.';
     return $new_str;
 }
+
+
+/* Custom Gravity Forms Code */
+//add_filter( 'gform_next_button_2', 'form_next_button', 10, 2 );
+function form_next_button( $button, $form ) {
+    return "<button class='button gform_next_button' id='gform_next_button_{$form['id']}'><span>Donate</span></button>";
+}
