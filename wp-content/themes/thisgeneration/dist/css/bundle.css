@@ -9269,6 +9269,60 @@ body.single-docs .site-content > .ast-container,
   text-align: center;
   font-size: 12px;
   color: #71716c; }
+.sign-up_form {
+  width: 600px;
+  max-width: 100% !important;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin-bottom: 36px;
+  overflow: hidden;
+  padding: 0 20px; }
+.sign-up_form .gform_body .gform_fields .gfield {
+    padding-bottom: 10px !important; }
+.sign-up_form .gform_body .gform_fields .gfield .ginput_container textarea,
+  .sign-up_form .gform_body .gform_fields .gfield .ginput_container select,
+  .sign-up_form .gform_body .gform_fields .gfield .ginput_container input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    border: 1px solid #dfdfd7;
+    border-radius: 5px; }
+.sign-up_form #input_12_2_3 {
+    border-radius: 0px !important;
+    -webkit-border-top-left-radius: 5px !important;
+    -webkit-border-bottom-left-radius: 5px !important;
+    -moz-border-radius-topleft: 5px !important;
+    -moz-border-radius-bottomleft: 5px !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    border-right: 0px solid #fff !important; }
+.sign-up_form #input_12_2_6 {
+    border-radius: 0px !important;
+    -webkit-border-top-right-radius: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    -moz-border-radius-topright: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important; }
+.sign-up_form li.gfield span.name_first {
+    padding-right: 0px !important; }
+.sign-up_form .gform_fields .gfield--medium {
+    width: 100% !important; }
+.sign-up_form .gform_footer {
+    padding: 10px 0px !important;
+    width: 590px !important;
+    margin: 0 -15px !important; }
+.sign-up_form .gform_footer input.button,
+  .sign-up_form .gform_footer input[type=submit],
+  .sign-up_form .gform_page_footer input.button,
+  .sign-up_form .gform_page_footer input[type=submit] {
+    border-radius: 5px !important;
+    border: 1px solid #71716c !important;
+    background-color: #f5f5f5 !important;
+    max-width: 100%; }
 /* ------------------------------------------------------------ *\
   WP Gutenberg
 \* ------------------------------------------------------------ */
