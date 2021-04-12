@@ -2,11 +2,12 @@
 	$has_button = ! empty( $section['button_link'] ) && ! empty( $section['button_text'] );
 
 	// Check if the popup link is checked
-	$has_video = $section['open_in_popup'];
+	$has_video 		= $section['open_in_popup'];
+	$is_full_width  = $section['full_width'];
 ?>
 
 <?php if ( ! empty( $section['rich_text_title'] ) || ! empty( $section['rich_text'] ) || $has_button ) : ?>
-	<section class="section-text">
+	<section class="section-text <?php if ( $is_full_width ) { ?>full_width<?php } ?>">
 		<?php if ( ! empty( $section['rich_text_title'] ) ) : ?>
 			<header class="section__head">
 				<div class="shell">
