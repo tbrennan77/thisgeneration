@@ -21,9 +21,10 @@
 	.question__head {
 		position: relative;
 		padding: 21px 166px 21px 116px;
-		border-radius: 10px;
-		background-color: $c-gray;
+		border-radius: 0px;
+		background-color: $c-white;
 		overflow: hidden;
+		border-bottom: 1px solid $c-light-gray;
 
 		@include breakpoint-down(mobile) {
 			padding-left: 85px;
@@ -40,7 +41,7 @@
 			left: 45px;
 			top: 7px;
 			font-size: 45px;
-			font-weight: 900;
+			font-weight: 700;
 			font-family: $ff-sans-serif-2;
 			line-height: 39px;
 			pointer-events: none;
@@ -84,12 +85,12 @@
 			padding-left: 4px;
 			padding-bottom: 2px;
 			font-size: 45px;
-			font-weight: 900;
-			color: $c-white;
+			font-weight: 700;
+			color: $c-light-gray;
 			font-family: $ff-sans-serif-2;
 			text-transform: uppercase;
 			line-height: 62px;
-			background-color: $c-blue;
+			background-color: $c-white;
 			border-radius: 50%;
 			text-align: center;
 			pointer-events: none;
