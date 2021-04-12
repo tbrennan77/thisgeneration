@@ -16,5 +16,9 @@
  		@include breakpoint-down(mobile-medium) {
 			margin-bottom: 35px;
 		}
+
+		h1 {
+			font-weight: 700;
+		}
  	}
 }
