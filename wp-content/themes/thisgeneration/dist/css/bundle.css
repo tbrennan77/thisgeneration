@@ -9341,6 +9341,86 @@ body.single-docs .site-content > .ast-container,
     border: 1px solid #71716c !important;
     background-color: #f5f5f5 !important;
     max-width: 100%; }
+.onboarding_form {
+  width: 600px;
+  max-width: 100% !important;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin-bottom: 36px;
+  overflow: hidden;
+  padding: 0px; }
+.onboarding_form .gform_body {
+    padding: 0 20px !important; }
+.onboarding_form .gform_body .gform_fields .gfield {
+    padding-bottom: 10px !important; }
+.onboarding_form .gform_body .gform_fields .gfield .ginput_container textarea,
+  .onboarding_form .gform_body .gform_fields .gfield .ginput_container select,
+  .onboarding_form .gform_body .gform_fields .gfield .ginput_container input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    border: 1px solid #dfdfd7;
+    border-radius: 5px; }
+.onboarding_form #input_13_1_3 {
+    border-radius: 0px !important;
+    -webkit-border-top-left-radius: 5px !important;
+    -webkit-border-bottom-left-radius: 5px !important;
+    -moz-border-radius-topleft: 5px !important;
+    -moz-border-radius-bottomleft: 5px !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    border-right: 0px solid #fff !important; }
+.onboarding_form #input_13_1_6 {
+    border-radius: 0px !important;
+    -webkit-border-top-right-radius: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    -moz-border-radius-topright: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important; }
+.onboarding_form li.gfield span.name_first {
+    padding-right: 0px !important; }
+.onboarding_form .gform_fields .gfield--medium {
+    width: 100% !important; }
+.onboarding_form .gform_footer {
+    padding: 10px -20px !important;
+    width: 590px !important;
+    margin: 0 -20px !important; }
+.onboarding_form .gform_footer input.button,
+  .onboarding_form .gform_footer input[type=submit],
+  .onboarding_form .gform_page_footer input.button,
+  .onboarding_form .gform_page_footer input[type=submit] {
+    border-radius: 5px !important;
+    border: 1px solid #71716c !important;
+    background-color: #f5f5f5 !important;
+    max-width: 100%; }
+.onboarding_form .content p {
+    padding: 10px 0 30px 0 !important; }
+.onboarding_form div.gfield_description {
+    display: inline-block !important; }
+.onboarding_form #gform_page_13_2 .gform_previous_button {
+  width: 25%;
+  display: inline;
+  background-color: #fff !important; }
+.onboarding_form #gform_page_13_2 .gform_next_button {
+  width: 74%;
+  display: inline; }
+.onboarding_form #gform_page_13_2 input {
+  margin-bottom: 5px; }
+.onboarding_form #gform_page_13_3 .gform_previous_button {
+  width: 25%;
+  display: inline;
+  background-color: #fff !important; }
+.onboarding_form #gform_page_13_3 .gform_button {
+  width: 74%;
+  display: inline;
+  background-color: #d83361 !important;
+  color: #fff;
+  font-weight: bold;
+  border-color: #d83361 !important; }
 /* ------------------------------------------------------------ *\
   WP Gutenberg
 \* ------------------------------------------------------------ */
