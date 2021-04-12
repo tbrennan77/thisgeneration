@@ -113,8 +113,9 @@ readers do not read off random characters that represent icons
          Form Horizontal --------------------------
          Custom Gravity Forms CSS -----------------
     70. WP Gutenberg ------------------------------
-    71. Slick Styles ------------------------------
-    72. Custom Blocks -----------------------------
+    71. Map box -----------------------------------
+    72. Slick Styles ------------------------------
+    73. Custom Blocks -----------------------------
  */
 
 @import url("https://use.typekit.net/sog3nwl.css");
@@ -4581,7 +4582,8 @@ blockquote:last-child {
   position: relative;
   z-index: 10;
   text-align: center;
-  margin-bottom: -40px; }
+  margin-bottom: -40px;
+  display: none; }
 @media (max-width: 500px) {
     .article-single .article__socials {
       margin-bottom: 10px; } }
@@ -4596,7 +4598,8 @@ blockquote:last-child {
 .article-single .article__socials .socials {
   display: inline-block;
   padding: 0 30px;
-  background-color: #fff; }
+  background-color: #fff;
+  display: none; }
 @media (max-width: 575px) {
     .article-single .article__socials .socials {
       padding-left: 15px;
@@ -5858,9 +5861,10 @@ body .nav ul li:hover > ul {
 .question .question__head {
   position: relative;
   padding: 21px 166px 21px 116px;
-  border-radius: 10px;
-  background-color: #71716c;
-  overflow: hidden; }
+  border-radius: 0px;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #dfdfd7; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .question .question__head {
       padding-left: 85px;
@@ -5874,7 +5878,7 @@ body .nav ul li:hover > ul {
     left: 45px;
     top: 7px;
     font-size: 45px;
-    font-weight: 900;
+    font-weight: 700;
     font-family: "Avenir Next", Arial, sans-serif;
     line-height: 39px;
     pointer-events: none; }
@@ -5908,12 +5912,12 @@ body .nav ul li:hover > ul {
     padding-left: 4px;
     padding-bottom: 2px;
     font-size: 45px;
-    font-weight: 900;
-    color: #fff;
+    font-weight: 700;
+    color: #dfdfd7;
     font-family: "Avenir Next", Arial, sans-serif;
     text-transform: uppercase;
     line-height: 62px;
-    background-color: #3b5963;
+    background-color: #fff;
     border-radius: 50%;
     text-align: center;
     pointer-events: none; }
@@ -6754,6 +6758,8 @@ body .nav ul li:hover > ul {
 @media (max-width: 575px) {
       .section-questions .section__head {
         margin-bottom: 35px; } }
+.section-questions .section__head h1 {
+      font-weight: 700; }
 /* ------------------------------------------------------------ *\
 	Section Small Intro
 \* ------------------------------------------------------------ */
@@ -7015,6 +7021,18 @@ body .nav ul li:hover > ul {
     margin-bottom: 40px; }
 .section-text .section__entry:last-child {
       margin-bottom: 0; }
+.section-text.full_width {
+  border-bottom: 0px solid #dfdfd7;
+  margin: 0; }
+.section-text.full_width .section__body {
+    margin-top: 0;
+    padding: 0; }
+.section-text.full_width .shell {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    width: 100%; }
 /* ------------------------------------------------------------ *\
 	Shell
 \* ------------------------------------------------------------ */
@@ -9326,6 +9344,11 @@ body.single-docs .site-content > .ast-container,
 /* ------------------------------------------------------------ *\
   WP Gutenberg
 \* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ *\
+	Map box
+\* ------------------------------------------------------------ */
+.mapboxgl-canvas {
+  width: 100%; }
 /* ------------------------------------------------------------ *\
 	Slick Styles
 \* ------------------------------------------------------------ */
