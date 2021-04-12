@@ -6,7 +6,7 @@
 
 <?php
 	get_header();
-
+	
 	$sections = carbon_get_the_post_meta( 'crb_section_builder_sections' );
 
 	foreach ( $sections as $section ) {
