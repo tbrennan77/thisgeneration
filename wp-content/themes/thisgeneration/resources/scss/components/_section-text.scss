@@ -56,3 +56,21 @@
 		}
 	}
 }
+
+.section-text.full_width {
+	border-bottom: 0px solid #dfdfd7;
+	margin: 0;
+
+	.section__body {
+	    margin-top: 0;
+	    padding: 0;
+	}
+
+	.shell {
+		max-width: 100%;
+	    padding-left: 0;
+	    padding-right: 0;
+	    margin: 0;
+	    width: 100%;
+	}
+}
