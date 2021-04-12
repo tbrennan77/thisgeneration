@@ -3,9 +3,10 @@
 use Carbon_Fields\Container\Container;
 use Carbon_Fields\Field\Field;
 
-Container::make( 'post_meta', __( 'Sections', 'crb' ) )
+Container::make( 'post_meta', __( 'Section Builder', 'crb' ) )
 	->where( 'post_type', '=', 'page' )
 	->where( 'post_template', '=', 'templates/section-builder.php' )
+	->or_where( 'post_template', '=', 'templates/landing-page.php' )
 	->add_fields( array(
 		Field::make( 'complex', 'crb_section_builder_sections', '' )
 			->set_layout( 'tabbed-vertical' )
@@ -167,7 +168,8 @@ Container::make( 'post_meta', __( 'Sections', 'crb' ) )
 					) ),
 				Field::make( 'text', 'button_link', __( 'Button link', 'crb' ) ),
 				Field::make( 'text', 'button_text', __( 'Button text', 'crb' ) ),
-				Field::make( 'checkbox', 'open_in_popup', __( 'Open link in popup', 'crb' ) )
+				Field::make( 'checkbox', 'open_in_popup', __( 'Open link in popup', 'crb' ) ),
+				Field::make( 'checkbox', 'full_width', __( 'Make section full width', 'crb' ) )
 			) )
 			->add_fields( 'story', array(
 				Field::make( 'image', 'image', __( 'Image', 'crb' ) )
@@ -391,9 +393,56 @@ Container::make( 'user_meta', __( 'User options', 'crb' ) )
 		Field::make( 'text', 'crb_user_linkedin_link', __( 'LinkedIn link', 'crb' ) )
 	) );
 
-/*
+
+	
+
+Container::make( 'post_meta', __( 'Landing Page Settings', 'crb' ) )
+	->where( 'post_type', '=', 'page' )
+	->where( 'post_template', '=', 'templates/landing-page.php' )
+	->add_fields( array(
+		Field::make( 'image', 'crb_landing_hero_bg_image', __( 'Hero Background image', 'crb' ) ),
+		Field::make( 'rich_text', 'crb_landing_hero_description', __( 'Hero Description', 'crb' ) )
+				->set_settings( array(
+					'media_buttons' => false,
+					'tinymce' => array(
+					'toolbar1' => 'bold,italic,link,formatselect',
+					'toolbar2' => false,
+					),
+				'quicktags' => false
+				) ),
+		Field::make( 'text', 'crb_landing_hero_title', __( 'Hero Title', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_sub-title', __( 'Hero Sub-Title', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_contact_email', __( 'Hero Contact Email', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_contact_phone', __( 'Hero Contact Phone', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_contact_website', __( 'Hero Contact Website', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_css_class', __( 'Hero Section Custom CSS Class', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_custom_bg', __( 'Hero Section Background Inline Style', 'crb' ) ),
+		Field::make( 'text', 'crb_landing_hero_mp4_video_link', __( 'Hero MP4 Background Video', 'crb' ) )
+					->set_width( 50 )
+					->set_conditional_logic( array(
+						array(
+							'field' => 'radio_image_or_video',
+							'value' => 'video',
+						)
+					) ),
+		Field::make( 'text', 'crb_landing_hero_webm_video_link', __( 'Hero Webm Background Video', 'crb' ) )
+					->set_width( 50 )
+					->set_conditional_logic( array(
+						array(
+							'field' => 'radio_image_or_video',
+							'value' => 'video',
+						)
+					) ),
+		Field::make( 'checkbox', 'crb_landing_hero_center_content', __( 'Center Content', 'crb' ) ),
+		Field::make( 'checkbox', 'crb_landing_hero_full_width', __( 'Make Section Full Width', 'crb' ) )
+	) );
+
+
+
+/* 
 Container::make( 'post_meta', __( 'Custom Data', 'crb' ) )
 	->where( 'post_type', '=', 'page' )
+	->where( 'post_template', '=', 'templates/landing-page.php' )
 	->add_fields( array(
 	Field::make( 'complex', 'crb_my_data' )
 		->add_fields( array(
@@ -405,4 +454,6 @@ Container::make( 'post_meta', __( 'Custom Data', 'crb' ) )
 	Field::make( 'image', 'crb_img' ),
 	Field::make( 'file', 'crb_pdf' ),
 	) );
+
 */
+
