@@ -686,6 +686,12 @@
 	text-align: center;
 	padding-bottom: 10px;
 }
+.donation_form .choose_amount_campaign {
+	font-size: 120%;
+	padding-bottom: 20px !important;
+	font-weight: bold;
+	text-align: center;
+}
 .donation_form .text_22 {
 	text-align: center;
 	padding-bottom: 10px;
@@ -707,7 +713,8 @@
 	border: 1px solid $c-gray !important;
 	background-color: $c-near-white !important;
 }
-.donation_form #input_2_31 {
+.donation_form #input_2_31, 
+.donation_form #input_14_31 {
 	border-radius: 0px !important;
 	-webkit-border-top-left-radius: 5px !important;
 	-webkit-border-bottom-left-radius: 5px !important;
@@ -717,7 +724,8 @@
 	border-bottom-left-radius: 5px !important;
 	border-right: 0px solid $c-white  !important;
 }
-.donation_form #input_2_32 {
+.donation_form #input_2_32, 
+.donation_form #input_14_32 {
 	border-radius: 0px !important;
 	-webkit-border-top-right-radius: 5px !important;
 	-webkit-border-bottom-right-radius: 5px !important;
@@ -729,7 +737,8 @@
 .donation_form .gform_page_footer input.button:hover {
 	color: $c-gray !important;
 }
-.donation_form #gform_page_2_2 {
+.donation_form #gform_page_2_2, 
+.donation_form #gform_page_14_2 {
 	.gform_previous_button {
 		width: 25%;
 		display: inline;
@@ -743,7 +752,8 @@
 		margin-bottom: 5px;
 	}
 }
-.donation_form #gform_page_2_3 {
+.donation_form #gform_page_2_3,
+.donation_form #gform_page_14_3 {
 	.gform_previous_button {
 		width: 25%;
 		display: inline;
