@@ -52,6 +52,10 @@
 															?>
 														</p><!-- /.counter__title -->
 													<?php endif; ?>
+
+													<?php if ( ! empty( $item['button_link'] ) ) : ?>
+														<a href="<?php echo esc_html( $item['button_link'] ); ?>" class="btn btn--block btn--ghost"><?php echo esc_html( $item['button_text'] ); ?></a>
+													<?php endif; ?>
 												</div><!-- /.counter__inner -->
 											<?php endif; ?>
 										</div><!-- /.counter -->

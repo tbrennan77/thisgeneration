@@ -137,7 +137,9 @@ Container::make( 'post_meta', __( 'Section Builder', 'crb' ) )
 							->set_required( true ),
 						Field::make( 'text', 'number', __( 'Number', 'crb' ) ),
 						Field::make( 'text', 'title', __( 'Title', 'crb' ) ),
-						Field::make( 'text', 'description', __( 'Description', 'crb' ) )
+						Field::make( 'text', 'description', __( 'Description', 'crb' ) ),
+						Field::make( 'text', 'button_link', __( 'Button Link', 'crb' ) ),
+						Field::make( 'text', 'button_text', __( 'Button Text', 'crb' ) )
 					) )
 			) )
 			->add_fields( 'callout', array(
