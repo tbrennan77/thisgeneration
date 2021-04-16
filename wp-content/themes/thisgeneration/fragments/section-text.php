@@ -4,9 +4,20 @@
 	// Check if the popup link is checked
 	$has_video 		= $section['open_in_popup'];
 	$is_full_width  = $section['full_width'];
+	$bg_image  		= $section['bg_image'];
+	$is_full_width  = $section['full_width'];
+
+	if ($bg_image) {
+		$bg_image = wp_get_attachment_image_url( $section['bg_image'], 'full' );
+	}
+
 ?>
 
 <?php if ( ! empty( $section['rich_text_title'] ) || ! empty( $section['rich_text'] ) || $has_button ) : ?>
+<?php if ( $bg_image ) { ?>
+	<div class="container">
+<div class="hero--video-wrapper" style="padding-right: 0px; padding-left: 0px; background: url(<?php echo $bg_image; ?>) no-repeat center top; background-size: cover;"></div>
+<?php } ?>
 	<section class="section-text <?php if ( $is_full_width ) { ?>full_width<?php } ?>">
 		<?php if ( ! empty( $section['rich_text_title'] ) ) : ?>
 			<header class="section__head">
@@ -50,4 +61,5 @@
 			</div><!-- /.section__body -->
 		<?php endif; ?>
 	</section><!-- /.section-text -->
+</div>
 <?php endif; ?>

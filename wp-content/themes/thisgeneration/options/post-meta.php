@@ -169,7 +169,13 @@ Container::make( 'post_meta', __( 'Section Builder', 'crb' ) )
 				Field::make( 'text', 'button_link', __( 'Button link', 'crb' ) ),
 				Field::make( 'text', 'button_text', __( 'Button text', 'crb' ) ),
 				Field::make( 'checkbox', 'open_in_popup', __( 'Open link in popup', 'crb' ) ),
-				Field::make( 'checkbox', 'full_width', __( 'Make section full width', 'crb' ) )
+				Field::make( 'checkbox', 'full_width', __( 'Make section full width', 'crb' ) ),
+				Field::make( 'image', 'bg_image', __( 'Background Image', 'crb' ) )
+					->set_help_text( 'Recommended image size: 1980x610' ),
+				Field::make( 'text', 'css_class', __( 'Custom CSS Class', 'crb' ) ),
+				Field::make( 'text', 'custom_bg', __( 'Background Inline Style', 'crb' ) ),
+				Field::make( 'text', 'mp4_video_link', __( 'MP4 Background Video', 'crb' ) ),
+				Field::make( 'text', 'webm_video_link', __( 'Webm Background Video', 'crb' ) )
 			) )
 			->add_fields( 'story', array(
 				Field::make( 'image', 'image', __( 'Image', 'crb' ) )

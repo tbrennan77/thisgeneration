@@ -6225,8 +6225,12 @@ body .nav ul li:hover > ul {
 .section-cols .section__head {
     margin-bottom: 16px; }
 .section-cols .section__head h2 {
-    font-size: 40px;
-    line-height: 1.2; }
+    font-size: 3rem;
+    color: #3c4044;
+    font-weight: 700;
+    font-family: "Avenir Next", Arial, sans-serif;
+    line-height: 1.15;
+    margin-bottom: 1rem; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
       .section-cols .section__head h2 {
         font-size: 30px; } }
@@ -6988,10 +6992,9 @@ body .nav ul li:hover > ul {
 .section-text {
   position: relative;
   z-index: 15;
-  margin: 85px 0 50px;
+  padding: 85px 0 50px;
   text-align: center;
-  border-bottom: 1px solid #dfdfd7;
-  padding-bottom: 50px; }
+  border-bottom: 1px solid #dfdfd7; }
 @media (max-width: 767px), screen and (max-width: 992px) and (orientation: landscape) {
     .section-text {
       margin: 45px 0 50px; } }
@@ -7015,8 +7018,7 @@ body .nav ul li:hover > ul {
     font-size: 28px; }
 .section-text .section__body {
     margin-top: -45px;
-    padding: 80px 0 60px;
-    background: #fff; }
+    padding: 80px 0 60px; }
 .section-text .section__entry {
     margin-bottom: 40px; }
 .section-text .section__entry:last-child {
@@ -7033,6 +7035,18 @@ body .nav ul li:hover > ul {
     padding-right: 0;
     margin: 0;
     width: 100%; }
+.hero--video-wrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 100px;
+  z-index: -1;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 571px; }
 /* ------------------------------------------------------------ *\
 	Shell
 \* ------------------------------------------------------------ */
@@ -9229,6 +9243,11 @@ body.single-docs .site-content > .ast-container,
   font-weight: bold;
   text-align: center;
   padding-bottom: 10px; }
+.donation_form .choose_amount_campaign {
+  font-size: 120%;
+  padding-bottom: 20px !important;
+  font-weight: bold;
+  text-align: center; }
 .donation_form .text_22 {
   text-align: center;
   padding-bottom: 10px;
@@ -9244,7 +9263,8 @@ body.single-docs .site-content > .ast-container,
   border-radius: 5px !important;
   border: 1px solid #71716c !important;
   background-color: #f5f5f5 !important; }
-.donation_form #input_2_31 {
+.donation_form #input_2_31,
+.donation_form #input_14_31 {
   border-radius: 0px !important;
   -webkit-border-top-left-radius: 5px !important;
   -webkit-border-bottom-left-radius: 5px !important;
@@ -9253,7 +9273,8 @@ body.single-docs .site-content > .ast-container,
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
   border-right: 0px solid #fff !important; }
-.donation_form #input_2_32 {
+.donation_form #input_2_32,
+.donation_form #input_14_32 {
   border-radius: 0px !important;
   -webkit-border-top-right-radius: 5px !important;
   -webkit-border-bottom-right-radius: 5px !important;
@@ -9263,20 +9284,25 @@ body.single-docs .site-content > .ast-container,
   border-bottom-right-radius: 5px !important; }
 .donation_form .gform_page_footer input.button:hover {
   color: #71716c !important; }
-.donation_form #gform_page_2_2 .gform_previous_button {
+.donation_form #gform_page_2_2 .gform_previous_button,
+.donation_form #gform_page_14_2 .gform_previous_button {
   width: 25%;
   display: inline;
   background-color: #fff !important; }
-.donation_form #gform_page_2_2 .gform_next_button {
+.donation_form #gform_page_2_2 .gform_next_button,
+.donation_form #gform_page_14_2 .gform_next_button {
   width: 74%;
   display: inline; }
-.donation_form #gform_page_2_2 input {
+.donation_form #gform_page_2_2 input,
+.donation_form #gform_page_14_2 input {
   margin-bottom: 5px; }
-.donation_form #gform_page_2_3 .gform_previous_button {
+.donation_form #gform_page_2_3 .gform_previous_button,
+.donation_form #gform_page_14_3 .gform_previous_button {
   width: 25%;
   display: inline;
   background-color: #fff !important; }
-.donation_form #gform_page_2_3 .gform_button {
+.donation_form #gform_page_2_3 .gform_button,
+.donation_form #gform_page_14_3 .gform_button {
   width: 74%;
   display: inline;
   background-color: #d83361 !important;
