@@ -55,8 +55,12 @@
 	}
 
 	.section__head h2 {
-		font-size: 40px;
-		line-height: 1.2;
+		font-size: 3rem;
+	    color: #3c4044;
+	    font-weight: 700;
+	    font-family: $ff-sans-serif;
+	    line-height: 1.15;
+	    margin-bottom: 1rem;
 
 		@include breakpoint-down(mobile) {
 			font-size: 30px;
