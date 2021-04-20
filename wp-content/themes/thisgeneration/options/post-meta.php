@@ -114,6 +114,9 @@ Container::make( 'post_meta', __( 'Section Builder', 'crb' ) )
 					->set_width( 50 ),
 				Field::make( 'text', 'button_2_text', __( 'Button 2 text', 'crb' ) )
 					->set_width( 50 ),
+				Field::make( 'text', 'contact_email', __( 'Contact Email', 'crb' ) ),
+				Field::make( 'text', 'contact_phone', __( 'Contact Phone', 'crb' ) ),
+				Field::make( 'text', 'contact_website', __( 'Contact Website', 'crb' ) ),
 				Field::make( 'image', 'foot_image', __( 'Foot image', 'crb' ) )
 					->set_conditional_logic( array(
 						array(
@@ -420,9 +423,6 @@ Container::make( 'post_meta', __( 'Landing Page Settings', 'crb' ) )
 				) ),
 		Field::make( 'text', 'crb_landing_hero_title', __( 'Hero Title', 'crb' ) ),
 		Field::make( 'text', 'crb_landing_hero_sub-title', __( 'Hero Sub-Title', 'crb' ) ),
-		Field::make( 'text', 'crb_landing_hero_contact_email', __( 'Hero Contact Email', 'crb' ) ),
-		Field::make( 'text', 'crb_landing_hero_contact_phone', __( 'Hero Contact Phone', 'crb' ) ),
-		Field::make( 'text', 'crb_landing_hero_contact_website', __( 'Hero Contact Website', 'crb' ) ),
 		Field::make( 'text', 'crb_landing_hero_css_class', __( 'Hero Section Custom CSS Class', 'crb' ) ),
 		Field::make( 'text', 'crb_landing_hero_custom_bg', __( 'Hero Section Background Inline Style', 'crb' ) ),
 		Field::make( 'text', 'crb_landing_hero_mp4_video_link', __( 'Hero MP4 Background Video', 'crb' ) )
