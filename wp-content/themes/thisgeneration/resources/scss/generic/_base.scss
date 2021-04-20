@@ -42,7 +42,7 @@ h5,
 h6 {
 	margin-bottom: calc(#{$line-height-base}em / 2);
 	font-family: $ff-sans-serif-2;
-	font-weight: 900;
+	font-weight: 700;
 	line-height: 1;
 
 }
@@ -129,4 +129,15 @@ dl:last-child,
 table:last-child,
 blockquote:last-child {
 	margin-bottom: 0;
+}
+
+// Add in custom css to be used in section builder
+.no-top-padding {
+	padding-top: 0px !important;
+}
+.border-top {
+	border-top: 1px solid $c-light-gray !important;
+}
+.border-bottom {
+	border-bottom: 1px solid $c-light-gray !important;
 }
