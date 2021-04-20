@@ -55,13 +55,11 @@
 				<?php endif; ?>
 
 				<?php if ( $has_socials ) : ?>
-					<footer class="section__foot">
-						<?php
-							crb_render_fragment( 'socials', array(
+					<?php
+						crb_render_fragment( 'socials', array(
 								'additional_class' => ''
 							) );
-						?>
-					</footer><!-- /.section__foot -->
+					?>
 				<?php endif; ?>
 			</div><!-- /.section__inner -->
 		</div><!-- /.shell -->

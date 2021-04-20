@@ -122,6 +122,22 @@
 		}
 	}
 
+	.section__actions.links {
+		ul li i {
+			color: $c-pink;
+		}
+	}
+	.section__actions.links ul li a {
+		padding: 0 15px 0 5px;
+		//width: 50%;
+		text-decoration: none;
+
+		@include breakpoint-down(mobile-medium) {
+			width: 100%;
+			padding: 5px;
+		}
+	}
+
 	.section__counter {
 		font-size: 3rem;
 		color: $c-dark-gray;
@@ -156,8 +172,30 @@
 	.section__foot {
 		position: relative;
 		z-index: 15;
-		margin-top: 92px;
+		margin-top: 22px;
 		text-align: center;
+
+		.share__text {
+		    display: inline;
+		    float: left;
+		    padding-top: 10px;
+		    font-weight: 700;
+		    color: $c-light-gray;
+		}
+
+		.socials ul {
+			justify-content: left;
+		}
+
+		.socials ul li a {
+			color: $c-light-gray;
+			height: 40px;
+			width: 40px;
+		}
+
+		.socials ul li a i {
+			font-size: 20px;
+		}
 	}
 
 	.section__foot img {

@@ -1,6 +1,12 @@
 <?php
-	$has_button_1 = ! empty( $section['button_1_text'] );
-	$has_button_2 = ! empty( $section['button_2_text'] );
+	$has_button_1 	 = ! empty( $section['button_1_text'] );
+	$has_button_2 	 = ! empty( $section['button_2_text'] );
+	$contact_email 	 = $section['contact_email'];
+	$contact_phone   = $section['contact_phone'];
+	$contact_website = $section['contact_website'];
+	//$is_full_width   = $section['full_width'];
+	//$css_class  	 = $section['css_class'];
+	$has_socials 	 = $section['show_social_share']; //= crb_has_socials();
 
 	$has_image = ( $section['radio_image_or_video'] === 'image' ) && ! empty( $section['image'] );
 	$has_video = ( $section['radio_image_or_video'] === 'video' ) && ! empty( $section['video_link'] ) && ! empty( $section['video_thumbnail'] );
@@ -52,6 +58,37 @@
 										echo apply_filters( 'the_content', $section['rich_text'] );
 									?>
 								</div><!-- /.section__entry -->
+								<div class="section__actions links">
+									<ul>
+										<?php if ( $contact_email ) : ?>
+											<li>
+												<i class="fal fa-envelope"></i><a href="mailto:<?php
+													echo $section['contact_email'];
+												?>"><?php
+													echo $section['contact_email'];
+												?></a>
+											</li>
+										<?php endif; ?>
+										<?php if ( $contact_phone ) : ?>
+											<li>
+												<i class="fal fa-mobile"></i><a href="tel:<?php
+												 	echo $section['contact_phone'];
+												?>"><?php
+												 	echo $section['contact_phone'];
+												?></a>
+											</li>
+										<?php endif; ?>
+										<?php if ( $contact_website ) : ?>
+											<li><i class="fal fa-browser"></i><a href="<?php
+													echo $section['contact_website'];
+												?>" target="_blank">
+												<?php
+													echo $section['contact_website'];
+												?></a>
+											</li>
+										<?php endif; ?>
+									</ul>
+								</div>
 							<?php endif; ?>
 
 							<?php if ( $has_button_1 || $has_button_2 ) : ?>
@@ -79,6 +116,18 @@
 									</ul>
 								</div><!-- /.section__actions -->
 							<?php endif; ?>
+
+							<?php if ( $has_socials ) : ?>
+								<footer class="section__foot">
+									<div class="share__text">Share: </div><?php
+										crb_render_fragment( 'socials', array(
+											'additional_class' => ''
+										) );
+									?>
+								</footer><!-- /.section__foot -->
+							<?php endif; ?>
+
+
 						</div><!-- /.section__content-inner -->
 					</div><!-- /.section__content -->
 				<?php endif; ?>

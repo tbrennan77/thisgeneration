@@ -123,7 +123,14 @@ Container::make( 'post_meta', __( 'Section Builder', 'crb' ) )
 							'field' => 'section_subtype',
 							'value' => 'counter_and_foot_image',
 						)
-					) )
+					) ),
+				Field::make( 'checkbox', 'show_social_share', __( 'Show social shares', 'crb' ) ),
+				Field::make( 'image', 'bg_image', __( 'Background Image', 'crb' ) )
+					->set_help_text( 'Recommended image size: 1980x610' ),
+				Field::make( 'text', 'css_class', __( 'Custom CSS Class', 'crb' ) ),
+				Field::make( 'text', 'custom_bg', __( 'Background Inline Style', 'crb' ) ),
+				Field::make( 'text', 'mp4_video_link', __( 'MP4 Background Video', 'crb' ) ),
+				Field::make( 'text', 'webm_video_link', __( 'Webm Background Video', 'crb' ) )
 			) )
 			->add_fields( 'counters', array(
 				Field::make( 'text', 'title', __( 'Title', 'crb' ) ),

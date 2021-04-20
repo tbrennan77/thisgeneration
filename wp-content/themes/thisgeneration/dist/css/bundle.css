@@ -6300,6 +6300,15 @@ body .nav ul li:hover > ul {
       .section-cols .section__actions ul li {
         width: 100%;
         padding: 5px; } }
+.section-cols .section__actions.links ul li i {
+    color: #d83361; }
+.section-cols .section__actions.links ul li a {
+    padding: 0 15px 0 5px;
+    text-decoration: none; }
+@media (max-width: 575px) {
+      .section-cols .section__actions.links ul li a {
+        width: 100%;
+        padding: 5px; } }
 .section-cols .section__counter {
     font-size: 3rem;
     color: #3c4044;
@@ -6325,8 +6334,24 @@ body .nav ul li:hover > ul {
 .section-cols .section__foot {
     position: relative;
     z-index: 15;
-    margin-top: 92px;
+    margin-top: 22px;
     text-align: center; }
+.section-cols .section__foot .share__text {
+      display: inline;
+      float: left;
+      padding-top: 10px;
+      font-weight: 700;
+      color: #dfdfd7; }
+.section-cols .section__foot .socials ul {
+      -webkit-box-pack: left;
+          -ms-flex-pack: left;
+              justify-content: left; }
+.section-cols .section__foot .socials ul li a {
+      color: #dfdfd7;
+      height: 40px;
+      width: 40px; }
+.section-cols .section__foot .socials ul li a i {
+      font-size: 20px; }
 .section-cols .section__foot img {
     width: 532px; }
 /*section-cols--reverse*/
