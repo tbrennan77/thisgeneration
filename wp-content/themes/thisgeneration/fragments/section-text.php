@@ -15,8 +15,8 @@
 
 <?php if ( ! empty( $section['rich_text_title'] ) || ! empty( $section['rich_text'] ) || $has_button ) : ?>
 <?php if ( $bg_image ) { ?>
-	<div class="container">
-<div class="hero--video-wrapper" style="padding-right: 0px; padding-left: 0px; background: url(<?php echo $bg_image; ?>) no-repeat center top; background-size: cover;"></div>
+<div class="container">
+	<div class="hero--video-wrapper" style="padding-right: 0px; padding-left: 0px; background: url(<?php echo $bg_image; ?>) no-repeat center top; background-size: cover;"></div>
 <?php } ?>
 	<section class="section-text <?php if ( $is_full_width ) { ?>full_width<?php } ?>">
 		<?php if ( ! empty( $section['rich_text_title'] ) ) : ?>
@@ -61,5 +61,9 @@
 			</div><!-- /.section__body -->
 		<?php endif; ?>
 	</section><!-- /.section-text -->
+<?php if ( $bg_image ) { ?>
+	</div>
 </div>
+<?php } ?>
+
 <?php endif; ?>
