@@ -141,3 +141,10 @@ blockquote:last-child {
 .border-bottom {
 	border-bottom: 1px solid $c-light-gray !important;
 }
+.max-width-800 {
+	max-width: 800px !important;
+	margin: 0 auto;
+}
+.align-left {
+	text-align: left !important;
+}
