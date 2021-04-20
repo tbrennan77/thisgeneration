@@ -115,7 +115,8 @@ readers do not read off random characters that represent icons
     70. WP Gutenberg ------------------------------
     71. Map box -----------------------------------
     72. Slick Styles ------------------------------
-    73. Custom Blocks -----------------------------
+    73. Smash Balloon YouTube Feed Embed ----------
+    74. Custom Blocks -----------------------------
  */
 
 @import url("https://use.typekit.net/sog3nwl.css");
@@ -3903,7 +3904,7 @@ h5,
 h6 {
   margin-bottom: 0.835em;
   font-family: "Avenir Next", Arial, sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1; }
 .h1,
 h1 {
@@ -3972,6 +3973,12 @@ dl:last-child,
 table:last-child,
 blockquote:last-child {
   margin-bottom: 0; }
+.no-top-padding {
+  padding-top: 0px !important; }
+.border-top {
+  border-top: 1px solid #dfdfd7 !important; }
+.border-bottom {
+  border-bottom: 1px solid #dfdfd7 !important; }
 /* ------------------------------------------------------------ *\
 	Helpers
 \* ------------------------------------------------------------ */
@@ -4963,6 +4970,20 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
 .btn--ghost:hover {
     background: #71716c;
     color: #fff; }
+.btn--link {
+  padding: 0;
+  border: 0px solid transparent;
+  background: transparent;
+  color: #d83361;
+  border-bottom: 1px solid #dfdfd7;
+  max-width: 100px !important;
+  border-radius: 0;
+  margin-top: 20px !important; }
+.btn--link:hover {
+    border: 0px solid transparent;
+    background: transparent;
+    border-bottom: 1px solid #d83361;
+    color: #71716c; }
 /*btn--white-text*/
 .btn--white-text {
   color: #fff; }
@@ -5103,8 +5124,7 @@ _:-ms-fullscreen, :root .article-single .article__background-inner {
       width: 129px;
       max-width: 100%; }
 .counter .counter__image {
-    height: 108px;
-    margin-bottom: 12px; }
+    margin-bottom: 32px; }
 .counter .counter__image img {
     max-height: 100%;
     width: auto; }
@@ -8728,6 +8748,20 @@ body.single-docs .site-content > .ast-container,
     padding-right: 0 !important;
     padding-bottom: 0 !important;
     padding-left: 0 !important; } }
+#cmplz-document {
+  font-size: 16px;
+  margin-top: 0;
+  max-width: 100%;
+  text-justify: inter-word; }
+#cmplz-document h2, #cmplz-document h3 {
+  font-size: 22px;
+  text-align: left;
+  margin-top: 40px;
+  text-transform: initial;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c6c6c6;
+  margin-bottom: 10px;
+  font-weight: 700; }
 /* ------------------------------------------------------------ *\
 	Gravity Forms Reset
 \* ------------------------------------------------------------ */
@@ -9490,6 +9524,11 @@ body.single-docs .site-content > .ast-container,
         height: 14px; } }
 .slick-dots li.slick-active button {
     opacity: 1; }
+/* ------------------------------------------------------------ *\
+	Smash Balloon YouTube Feed Embed
+\* ------------------------------------------------------------ */
+.sb_youtube_header {
+  display: none; }
 /* ------------------------------------------------------------ *\
 	Custom Blocks
 \* ------------------------------------------------------------ */
